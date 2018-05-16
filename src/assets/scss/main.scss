@@ -1,0 +1,7 @@
+@import 'normalize.scss';
+@import 'mixins.scss';
+@import './components/login.scss';
+
+body {
+    background-color: $primary-color-fiolet;
+}

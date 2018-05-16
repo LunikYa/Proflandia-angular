@@ -1,0 +1,8 @@
+lib
+dist
+.npmrc
+.tmp
+.vscode
+build
+node_modules
+public
