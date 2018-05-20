@@ -19,7 +19,12 @@ $h6_margin: 2.33em 0 !default;
 
 $background: #fff !default;
 $color: #000 !default;
-
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
 article,
 aside,
 details,
