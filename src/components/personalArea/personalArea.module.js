@@ -6,7 +6,6 @@ import PersonalAreaController from './personalArea.controller';
 const PersonalAreaModule = angular
     .module('personalArea', [uiRouter])
     .component('personalArea', PersonalAreaComponent)
-    .controller('personalAreaController', PersonalAreaController)
     .name
 
 export default PersonalAreaModule

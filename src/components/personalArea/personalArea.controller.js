@@ -1,8 +1,10 @@
-function PersonalAreaController($scope) {
-    debugger
-    $scope.close = function () {
-        alert('aaa')
+ class PersonalAreaController {
+    $onInit() {
+        console.log('init')
+    }
+    close() {
+        console.log('close')
     }
 }
 
-export default PersonalAreaController;
+export default PersonalAreaController
