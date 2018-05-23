@@ -20,6 +20,10 @@ const App = angular
                 url: '/register',
                 component: 'register'
             })
+            .state('personalArea',{
+                url: '/personalArea',
+                component: 'personalArea'
+        })
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('')

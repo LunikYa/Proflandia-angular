@@ -1,3 +1,4 @@
+/*
 import React, {Component} from 'react';
 import { loginUser }      from '../store/actions/usersActions';
 import { connect }        from 'react-redux';
@@ -138,3 +139,4 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
+*/
