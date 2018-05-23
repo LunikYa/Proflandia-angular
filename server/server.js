@@ -2,6 +2,7 @@ const Koa        = require('koa');
 const bodyParser = require('koa-bodyparser');
 const rootRouter = require('./router/router.js'); 
 const mongoCl    = require('./db/db');
+const cors       = require('koa2-cors')
 const app        = new Koa();
 const hostname   = '127.0.0.1';
 const port       = '3000';
@@ -16,17 +17,7 @@ async function server() {
     
     app.use(bodyParser());     
 
-    app.use(async (ctx, next) => {
-        ctx.set('Access-Control-Allow-Origin', '*');
-        ctx.set('Access-Control-Allow-Headers', 'Content-Type, Accept, authorization, Origin');
-        ctx.set('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-        ctx.set('Access-Control-Request-Method', 'POST');
-        ctx.set('Access-Control-Request-Headers', 'authorization');
-        if (ctx.method === 'OPTIONS' && ctx.headers['access-control-request-headers'] === 'authorization') {
-            ctx.response.status = 200;
-        }
-        await next();
-    })
+    app.use(cors())
 
     app.use(rootRouter.routes())
     
