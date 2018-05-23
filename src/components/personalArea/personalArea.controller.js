@@ -1,7 +1,4 @@
  class PersonalAreaController {
-    $onInit() {
-        console.log('init')
-    }
     close() {
         console.log('close')
     }
