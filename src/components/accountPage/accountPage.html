@@ -1,4 +1,4 @@
-<div class="personalArea">
+<div class="exitAccount">
     <div class="header">
         <ul>
             <li>LOGO</li>
@@ -7,6 +7,7 @@
             <li><a href="#">тест</a></li>
             <li><input type="search" placeholder="поиск"></li>
         </ul>
+        <button ng-click="$ctrl.exitAccount()">Close</button>
     </div>
     <div class="main">
         <nav class="mainNav">
@@ -19,7 +20,6 @@
         </nav>
         <div class="account">
             <div class="accountTop">
-                <button class="personalAreaExit" ng-click="$ctrl.close()">Close</button>
                 <h3>Аккаунт</h3>
 
             </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="accountRight">
                 <div class="myProfessionDiv">
-                    <button class="myProfession"><i>+</i></button><br/>
+                    <button class="myProfession" ng-click="$ctrl.addNewProfession()"><i>+</i></button><br/>
                 <span>Add new profession</span>
             </div>
         </div>

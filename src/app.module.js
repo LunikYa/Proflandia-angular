@@ -20,9 +20,9 @@ const App = angular
                 url: '/register',
                 component: 'register'
             })
-            .state('personalArea',{
-                url: '/personalArea',
-                component: 'personalArea'
+            .state('accountPage',{
+                url: '/accountPage',
+                component: 'accountPage'
         })
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);

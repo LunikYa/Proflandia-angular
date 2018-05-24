@@ -1,4 +1,4 @@
-.personalArea {
+.exitAccount {
   max-width: 100%;
   max-height: max-content;
   background-color: $primary-color-blue;
@@ -46,10 +46,6 @@
     }
     .account {
       margin-bottom: 10em;
-      .personalAreaExit {
-        float: right;
-        margin-right: 2em;
-      }
       .accountLeft, .accountRight {
         margin: 0 auto;
         float: left;
