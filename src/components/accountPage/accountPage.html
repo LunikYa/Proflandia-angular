@@ -1,4 +1,4 @@
-<div class="exitAccount">
+<div class="accountPage">
     <div class="header">
         <ul>
             <li>LOGO</li>
@@ -20,16 +20,14 @@
         </nav>
         <div class="account">
             <div class="accountTop">
-                <h3>Аккаунт</h3>
-
+                <h2>Аккаунт</h2>
             </div>
             <div class="accountLeft">
-
                 <div>
                     <span>{{111+111}}</span><br/>
                     <img class="myPhoto">
-                </img>
-                    </div>
+                    </img>
+                </div>
                 <div class="myAccountData">
                     <div><span>Пол: </span><span>{{2+3}}</span></div>
                     <div><span>Возраст: </span><span>{{3+3}}</span></div>
@@ -37,12 +35,20 @@
                 </div>
             </div>
             <div class="accountRight">
-                <div class="myProfessionDiv">
-                    <button class="myProfession" ng-click="$ctrl.addNewProfession()"><i>+</i></button><br/>
-                <span>Add new profession</span>
+                <div class="progressProfession">
+                    <button class="myProfession" ng-click="$ctrl.addNewProfession()">{{3+8}}</button>
+                    <br/>
+                    <progress max='10' value={{2+2}}></progress><br/>
+                    {{2+2}} уровень
+                </div>
+
+                <div class="addNewProfession">
+                    <button class="myProfession" ng-click="$ctrl.addNewProfession()"><i>+</i></button>
+                    <br/>
+                    <span>Новая профессия</span>
+                </div>
             </div>
         </div>
+        <div class="footer">CCC</div>
     </div>
-    <div class="footer">CCC</div>
-</div>
 </div>

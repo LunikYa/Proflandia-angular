@@ -1,4 +1,4 @@
-.exitAccount {
+.accountPage {
   max-width: 100%;
   max-height: max-content;
   background-color: $primary-color-blue;
@@ -23,8 +23,7 @@
   }
   .main {
     width: 100%;
-    height: 80%;
-    margin: 0 auto;
+    //height: 80%;
     clear: left;
     .mainNav {
       border: 2px solid black;
@@ -72,8 +71,31 @@
           }
         }
       }
-      .myProfessionDiv {
-        float: left;
+      .accountRight {
+        text-align: justify;
+        div {
+          text-align: center;
+          display: inline-block;
+          margin: 1em;
+          progress {
+            width: -webkit-fill-available;
+            height: 0.5em;
+            -webkit-appearance: none;
+          }
+          progress::-webkit-progress-bar {
+            background-color: $primary-color-red;
+            border-radius: 10px;
+            overflow: hidden;
+          }
+          progress::-webkit-progress-value {
+            background-color: $primary-color-lime;
+          }
+        }
+        .addNewProfession {
+          vertical-align: top;
+          width: min-content;
+          text-align: center;
+        }
       }
     }
   }
