@@ -53,15 +53,11 @@ class RegisterController {
     }
     isValidtext(input){
         const text = this.ValidateService.isValidtext(input);
-        if (text.error) {
-            this[`${text.elem.name}Error`] = text.message
-            this[`${text.elem.name}Class`] = 'error-input'
-            return false
-        } else {
-            this[`${text.elem.name}Error`] = ''
-            this[`${text.elem.name}Class`] = 'accept-input'
-            return true
-        }
+
+        this[`${text.elem.name}Error`] = text.error ? text.message : ''
+        this[`${text.elem.name}Class`] = text.error ? 'error-input' : 'accept-input'
+        
+        return !text.error
     }
     hideStatus(event) {
         this[`${event.target.name}Error`] = ''
