@@ -2,6 +2,7 @@ class RegisterController {
     constructor($scope, $state, RegisterService, ValidateService) {
         this.RegisterService = RegisterService
         this.ValidateService = ValidateService
+        
         this.emailClass      = 'disable-input'
         this.passwordClass   = 'disable-input'
         this.nameClass       = 'disable-input'
@@ -17,7 +18,9 @@ class RegisterController {
                 surname:  form.surname.value
             }
             this.RegisterService.registerUser(user).then(
-                res => console.log('response', res),
+                res => {
+                    localStorage.setItem('token', res.token)
+                },
                 rej => console.log('reject', rej)
             )
         }
@@ -25,12 +28,8 @@ class RegisterController {
     validateForm(form) {
         let result = true;
         for (let i = 0; i < form.length; i++) {
-            if (form[i].type === 'email') {
-               result = this.isValidemail(form[i])
-            } else if (form[i].type === 'password') {
-                result = this.isValidpassword(form[i])
-            } else if (form[i].type === 'text') {
-                result = this.isValidtext(form[i])
+            if(form[i].tagName === 'INPUT'){
+                result = this[`isValid${form[i].type}`](form[i])
             }
         }
         return result
@@ -41,7 +40,7 @@ class RegisterController {
         this.emailError = email.error ? email.message : ''
         this.emailClass = email.error ? 'error-input' : 'accept-input'
 
-        return email.error
+        return !email.error
     }
     isValidpassword(input){
         const pass = this.ValidateService.isValidpassword(input);
@@ -49,7 +48,7 @@ class RegisterController {
         this.passwordError = pass.error ? pass.message : ''
         this.passwordClass =  pass.error ? 'error-input' : 'accept-input'
 
-        return pass.error       
+        return !pass.error       
     }
     isValidtext(input){
         const text = this.ValidateService.isValidtext(input);

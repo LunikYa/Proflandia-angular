@@ -2,30 +2,32 @@ class LoginController {
     constructor($scope, $state, LoginService, ValidateService) {
         this.LoginService    = LoginService
         this.ValidateService = ValidateService
+        
         this.emailClass      = 'disable-input'
         this.passwordClass   = 'disable-input'
     }
     loginUser(event) {
         const form = event.target;
+        
         if(this.validateForm(form)) {
             const user = {
                 email: form.email.value,
                 password: form.password.value
             }
-
             this.LoginService.loginUser(user).then(
-                res => console.log('response', res),
+                res => {
+                    localStorage.setItem('token', res.token)
+                },
                 rej => console.log('reject', rej)
             )
         }   
     }
     validateForm(form) {
         let result = true;
+
         for (let i = 0; i < form.length; i++) {
-            if (form[i].type === 'email') {
-               result = this.isValidemail(form[i])
-            } else if (form[i].type === 'password') {
-                result = this.isValidpassword(form[i])
+            if(form[i].tagName === 'INPUT'){
+                result = this[`isValid${form[i].type}`](form[i])
             }
         }
         return result
@@ -36,7 +38,7 @@ class LoginController {
         this.emailError = email.error ? email.message : ''
         this.emailClass = email.error ? 'error-input' : 'accept-input'
 
-        return email.error
+        return !email.error
     }
     isValidpassword(input){
         const pass = this.ValidateService.isValidpassword(input);
@@ -44,7 +46,7 @@ class LoginController {
         this.passwordError = pass.error ? pass.message : ''
         this.passwordClass =  pass.error ? 'error-input' : 'accept-input'
 
-        return pass.error       
+        return !pass.error       
     }
     hideStatus(event) {
         this[`${event.target.type}Error`] = ''

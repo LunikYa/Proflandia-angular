@@ -3,6 +3,7 @@ import uiRouter from 'angular-ui-router';
 import AppComponent from './app.component';
 import Components from './components/index.js';
 import './assets/scss/main.scss';
+// import CheckAccessService from './heplers/CheckAcces.service'
 
 const App = angular
     .module('app', [
@@ -10,6 +11,7 @@ const App = angular
         uiRouter
     ])
     .component('app', AppComponent)
+    // .service('CheckAccessService', CheckAccessService)
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', ($stateProvider, $urlRouterProvider, $locationProvider) => {
         $stateProvider
             .state('login', {
@@ -22,8 +24,7 @@ const App = angular
             })
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
-        $locationProvider.hashPrefix('')
+        $locationProvider.hashPrefix('');
     }])
-
+    
 export default App;
-
