@@ -3,11 +3,11 @@ const { ObjectId } = require('mongodb');
 
 module.exports.getLessons = async function (ctx) {
     const db = clientDb.getDB();
-    
-    const lessons = await db.collection('professions').findOne({name: ctx.params.profession}).toArray();
+
+    const lessons = await db.collection('professions').findOne({name: ctx.params.profession});
 
     ctx.response.status = 200;
-    ctx.response.body = lessons;
+    ctx.response.body   = lessons;
 }
 
 module.exports.getProfessions = async function (ctx) {

@@ -1,8 +1,9 @@
-export class LoginService {
+export default class LoginService {
     constructor($http) {
         this.$http = $http;
     }
     postUser() {
-    //   return $http.post('url').then(response => response.data);
+        event.preventDefault()
+      return this.$http.post('http://127.0.0.1:3000/login', {email: 'test', password: '123456'}).then(response => response.data);
     }
   }
