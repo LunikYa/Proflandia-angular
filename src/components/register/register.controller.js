@@ -2,7 +2,7 @@ class RegisterController {
     constructor($scope, $state, RegisterService, ValidateService) {
         this.RegisterService = RegisterService
         this.ValidateService = ValidateService
-        
+
         this.emailClass      = 'disable-input'
         this.passwordClass   = 'disable-input'
         this.nameClass       = 'disable-input'
@@ -19,6 +19,7 @@ class RegisterController {
             }
             this.RegisterService.registerUser(user).then(
                 res => {
+                    console.log(res)
                     localStorage.setItem('token', res.token)
                 },
                 rej => console.log('reject', rej)

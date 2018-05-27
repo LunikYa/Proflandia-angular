@@ -48,7 +48,7 @@ module.exports = {
         stats: 'errors-only',
         clientLogLevel: "none",
         hot: true,
-        port: 8080
+        port: 3000
     },
     resolve: {
         extensions: [".js", ".json"]

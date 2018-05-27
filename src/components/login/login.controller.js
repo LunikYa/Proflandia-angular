@@ -2,7 +2,7 @@ class LoginController {
     constructor($scope, $state, LoginService, ValidateService) {
         this.LoginService    = LoginService
         this.ValidateService = ValidateService
-        
+
         this.emailClass      = 'disable-input'
         this.passwordClass   = 'disable-input'
     }
@@ -16,6 +16,7 @@ class LoginController {
             }
             this.LoginService.loginUser(user).then(
                 res => {
+                    console.log(res)
                     localStorage.setItem('token', res.token)
                 },
                 rej => console.log('reject', rej)
