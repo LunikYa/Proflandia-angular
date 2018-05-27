@@ -1,15 +1,22 @@
 <div class='conteiner-form'>
     <h2 class="caption-h2">Log In</h2>
-    <form name='login' noValidate method='post' >
+    <form name='login' noValidate method='post' ng-submit="$ctrl.loginUser($event)">
         
-        <input type='email' name='email' class='disable-input' placeholder='You email' />
-        <div class='errormsg'>error</div>
+        <input type='email' name='email' placeholder='You email'
+            ng-class="$ctrl.emailClass"
+            ng-focus="$ctrl.hideStatus($event)"
+            ng-blur="$ctrl.isValidemail($event.target)"
+        />
+        <div class='errormsg'>{{$ctrl.emailError}}</div>
         
-        <input type="password" name='password' class='disable-input' placeholder='You password'/>
-        <div class='errormsg'>error</div>
+        <input type="password" name='password' placeholder='You password'
+            ng-class="$ctrl.passwordClass"
+            ng-focus="$ctrl.hideStatus($event)"
+            ng-blur="$ctrl.isValidpassword($event.target)"
+        />
+        <div class='errormsg'>{{$ctrl.passwordError}}</div>
 
-        <button class='button' ng-click="$ctrl.postUser">Submit</button>
+        <button class='button' type="submit">Submit</button>
     </form>
-    <button class='button' ng-click="$ctrl.post()">Submit</button>
     <a class='link' href="/register">Go to Register</a>
 </div>
