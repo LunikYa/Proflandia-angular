@@ -18,6 +18,7 @@ class LoginController {
                 res => {
                     console.log(res)
                     localStorage.setItem('token', res.token)
+                    localStorage.setItem('useremail', res.email)
                     this.$state.go('accountPage')
                 },
                 rej => console.log('reject', rej)
