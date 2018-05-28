@@ -6,4 +6,8 @@ dist
 build
 node_modules
 public
+<<<<<<< HEAD
+=======
+*.psd
+>>>>>>> master
 .idea

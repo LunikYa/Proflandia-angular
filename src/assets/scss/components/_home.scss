@@ -1,0 +1,71 @@
+.home-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.home-top-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+.home-nav-ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    font-size: 15px;
+    li {
+        margin-left: 60px;
+    }    
+}
+.header-first-box {
+    background: url('../../assets/img/home-header-img.png') no-repeat 50% 0;
+    background-size: contain;
+    height: 450px;
+}
+.home-h1 {
+    text-transform: uppercase;
+    font-size: 80px;
+    text-align: center;
+    padding-top: 350px;
+    margin: 0;
+    font-family: oks;
+}
+.home-button-box {
+    text-align: center;
+    margin-top: 80px;
+}
+.home-button {
+    width: 220px;
+    padding: 15px 0 15px 0px;
+    margin-left: 20px;
+    text-align: center;
+    display: inline-block;
+    background-color: $primary-color-fiolet;
+    border: 2px solid $primary-color-fiolet;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.home-button:hover {
+    transform: scale(1.1);
+    transition: all 1s;
+    color: #ffffff;
+}
+.home-button.home-button-transparent {
+    color: $primary-color-fiolet;
+    background-color: transparent;
+}
+// .Cтрана_профессий {
+    
+//     font-family: "OksFree";
+//     color: rgb(1, 0, 1);
+//     line-height: 0.343;
+//     text-align: center;
+//     position: absolute;
+//     left: 431.937px;
+//     top: 626.808px;
+//     z-index: 5;
+//   }
+  
