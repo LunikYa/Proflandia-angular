@@ -37,6 +37,14 @@ module.exports = {
                     ]
             },
             {
+                test: /\.(png|jp(e*)g|svg|eot|ttf|woff|woff2|otf)$/,  
+                use: [{loader: 'url-loader'}]
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file?name=public/fonts/[name].[ext]'
+            },
+            {
                 test: /\.html$/,
                 include: path.resolve(__dirname, "src"),
                 use: 'html-loader'
@@ -48,7 +56,7 @@ module.exports = {
         stats: 'errors-only',
         clientLogLevel: "none",
         hot: true,
-        port: 3000
+        port: 5500
     },
     resolve: {
         extensions: [".js", ".json"]
@@ -64,6 +72,7 @@ module.exports = {
       ],
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist"),
+        publicPath: '/'
     },
 };

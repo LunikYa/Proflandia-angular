@@ -14,8 +14,12 @@ const App = angular
     // .service('CheckAccessService', CheckAccessService)
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', ($stateProvider, $urlRouterProvider, $locationProvider) => {
         $stateProvider
-            .state('login', {
+            .state('home', {
                 url: '/',
+                component: 'home'
+            })
+            .state('login', {
+                url: '/login',
                 component: 'login'
             })
             .state('register', {
