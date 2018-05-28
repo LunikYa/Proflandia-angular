@@ -1,17 +1,14 @@
 const MongoClient = require('mongodb').MongoClient;
-const mongoUrl    = "mongodb://localhost:27017/angular";
+const mongoUrl    = "mongodb://lunti:0673946522@ds237620.mlab.com:37620/proflandia";
 
 var db;
 
 module.exports.connect = () => {
     return new Promise((res, rej) => {
         MongoClient.connect(mongoUrl, (err, client) => 
-        
         {
-            console.log('connect', client)
             if (err) console.log(err);
-            
-            db = client.db('angular');
+                db = client.db('proflandia');
             res(db)
         });
     })

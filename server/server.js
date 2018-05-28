@@ -4,10 +4,10 @@ const rootRouter = require('./router/router.js');
 const mongoCl    = require('./db/db');
 const cors       = require('koa2-cors')
 const app        = new Koa();
-const hostname   = '127.0.0.1';
-const port       = '3000';
+const hostname   = 'proflandia.herokuapp.com';
+const port       = process.env.PORT || 8000;
 const initialDb = require('./db/setup');
-
+// proflandia.herokuapp.com
 async function server() {
     const db    = await mongoCl.connect();
     const stats = await db.stats();
@@ -25,7 +25,7 @@ async function server() {
         console.log('server error', err)
     });
 
-    app.listen(port, hostname, (e) => {
+    app.listen(port, (e) => {
         if (e)
             console.log(e)
         console.log(`listen at http://${hostname}:${port}`)

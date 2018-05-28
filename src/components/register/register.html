@@ -1,20 +1,36 @@
 <div class='conteiner-form'>
     <h2 class="caption-h2">Register</h2>
-    <form name='login' noValidate method='post'>
+    <form name='login' noValidate method='post' ng-submit="$ctrl.registerUser($event)">
 
-        <input type="text" name='name' class="disable-input" placeholder='You name'/>
-        <div class='errormsg'>error</div>
+        <input type='email' name='email' placeholder='Введите свой е-мейл'
+            ng-class="$ctrl.emailClass"
+            ng-focus="$ctrl.hideStatus($event)"
+            ng-blur="$ctrl.isValidemail($event.target)"
+        />
+        <div class='errormsg'>{{$ctrl.emailError}}</div>
+        
+        <input type="password" name='password' placeholder='Придумайте пароль'
+            ng-class="$ctrl.passwordClass"
+            ng-focus="$ctrl.hideStatus($event)"
+            ng-blur="$ctrl.isValidpassword($event.target)"
+        />
+        <div class='errormsg'>{{$ctrl.passwordError}}</div>
+
+        <input type="text" name='name' placeholder='Ваше имя'
+            ng-class="$ctrl.nameClass"
+            ng-focus="$ctrl.hideStatus($event)"
+            ng-blur="$ctrl.isValidtext($event.target)"
+        />
+        <div class='errormsg'>{{$ctrl.nameError}}</div>
        
-        <input type="text" name='surname' class="disable-input" placeholder='You surname'/>
-        <div class='errormsg'>error</div>
+        <input type="text" name='surname' placeholder='Ваша фамилия'
+            ng-class="$ctrl.surnameClass"
+            ng-focus="$ctrl.hideStatus($event)"
+            ng-blur="$ctrl.isValidtext($event.target)"
+        />
+        <div class='errormsg'>{{$ctrl.surnameError}}</div>
         
-        <input type="email" name='email' class="disable-input" placeholder='You email' />
-        <div class='errormsg'>error</div>
-        
-        <input type="password" name='password' class="disable-input" placeholder='You password'/>
-        <div class='errormsg'>error</div>
-        
-        <button class='button'>Submit</button>
+        <button class='button' type="submit">Submit</button>
     </form>
-    <a class='link'href="/" ui-sref-active="active">Go to Login</a>
+    <a class='link'href="/login">Go to Login</a>
 </div>

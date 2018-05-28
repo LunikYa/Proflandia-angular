@@ -4,10 +4,10 @@ const securityRout    = require('./security/securityRouters');
 const verifyToken     = require('./verifyToken');
 
 
-// .use(publicRout.routes())
-//       .use(publicRout.allowedMethods())
-//       .use(verifyToken)
-router.use(securityRout.routes())
+router.use(publicRout.routes())
+      .use(publicRout.allowedMethods())
+      .use(verifyToken)
+      .use(securityRout.routes())
       .use(securityRout.allowedMethods())
 
 module.exports = router;

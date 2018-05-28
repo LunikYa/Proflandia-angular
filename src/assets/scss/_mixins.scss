@@ -1,4 +1,9 @@
-$primary-color-fiolet: #7b006d;
+@font-face {
+    font-family: oks; /* Имя шрифта */
+    src: url(../fonts/oks.otf); /* Путь к файлу со шрифтом */
+}
+
+$primary-color-fiolet: #690867;
 $primary-color-blue: rgb(91, 173, 180);
 $primary-color-yellow: #ffb10e;
 $primary-color-red: #ff1000;

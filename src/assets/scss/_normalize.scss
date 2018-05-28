@@ -75,6 +75,10 @@ html {
     -ms-text-size-adjust: 100%; // 2
 }
 
+a:hover, a{
+    text-decoration: inherit;
+    color: inherit; 
+  }
 // Addresses font-family inconsistency between 'textarea' and other form elements.
 
 html,

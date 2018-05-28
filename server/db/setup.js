@@ -13,7 +13,7 @@ module.exports = async () => {
     // const questionsArr = [{question: 'How are u ?', correctAnswer: 'human', variants: ['dog', 'phone', 'telepuzik'], lessonId: ''}]
     
     for(let i = 0; i < professionsArr.length; i++) {
-        const cursor = await professionsArr.insetOne({
+        const cursor = await professions.insertOne({
             name: professionsArr[i],
             numberLessons: 5
         })
