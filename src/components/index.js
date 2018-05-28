@@ -14,3 +14,5 @@ const rootModule = angular
         Home        
     ])
     .name;
+
+export default rootModule;
