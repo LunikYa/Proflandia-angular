@@ -1,10 +1,14 @@
- class AccountPageController {
-     exitAccount() {
-        console.log('exitAccount')
+class AccountPageController {
+    constructor(){
+        this.modalWindowText='Вы уверенны, что хотите выйти?';
     }
-     addNewProfession(){
-         console.log('addNewProfession')
-     }
+    exitAccount() {
+        this.showModalWindow = true;
+    }
+
+    addNewProfession() {
+        console.log('addNewProfession')
+    }
 }
 
 export default AccountPageController

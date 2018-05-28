@@ -8,6 +8,7 @@
             <li><input type="search" placeholder="поиск"></li>
         </ul>
         <button ng-click="$ctrl.exitAccount()">Close</button>
+        <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
     </div>
     <div class="main">
         <nav class="mainNav">
@@ -38,7 +39,8 @@
                 <div class="progressProfession">
                     <button class="myProfession" ng-click="$ctrl.addNewProfession()">{{3+6}}</button>
                     <br/>
-                    <progress max='10' value={{2+2}}></progress><br/>
+                    <progress max='10' value={{2+2}}></progress>
+                    <br/>
                     {{2+2}} уровень
                 </div>
 

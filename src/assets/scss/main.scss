@@ -1,7 +1,8 @@
 @import 'normalize.scss';
 @import 'mixins.scss';
 @import './components/login.scss';
-@import 'components/accountPage';
+@import './components/accountPage.scss';
+@import './components/modalWindow.scss';
 
 body {
     background: linear-gradient(205deg, #c528fa, #fae728, #52af45, #28fab5, #28b4fa, #cb00c0);
