@@ -1,0 +1,56 @@
+<div class="accountPage">
+    <div class="header">
+        <ul>
+            <li>LOGO</li>
+            <li><a href="#">профессии</a></li>
+            <li><a href="#">главная</a></li>
+            <li><a href="#">тест</a></li>
+            <li><input type="search" placeholder="поиск"></li>
+        </ul>
+        <button ng-click="$ctrl.exitAccount()">Close</button>
+        <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
+    </div>
+    <div class="main">
+        <nav class="mainNav">
+            <ul>
+                <li><a href="#">Изучаю</a></li>
+                <li><a href="#">Мои друзья</a></li>
+                <li><a href="#">Статистика</a></li>
+                <li><a href="#">Награды</a></li>
+            </ul>
+        </nav>
+        <div class="account">
+            <div class="accountTop">
+                <h2>Аккаунт</h2>
+            </div>
+            <div class="accountLeft">
+                <div>
+                    <span>{{111+111}}</span><br/>
+                    <img class="myPhoto">
+                    </img>
+                </div>
+                <div class="myAccountData">
+                    <div><span>Пол: </span><span>{{2+3}}</span></div>
+                    <div><span>Возраст: </span><span>{{3+3}}</span></div>
+                    <div><span>Рекомендованные профессии: </span><span>{{5+5}}</span></div>
+                </div>
+            </div>
+            <div class="accountRight">
+                <div class="progressProfession">
+                    <button class="myProfession" ng-click="$ctrl.addNewProfession()">{{3+6}}</button>
+                    <br/>
+                    <progress max='10' value={{2+2}}></progress>
+                    <br/>
+                    {{2+2}} уровень
+                </div>
+
+                <div class="addNewProfession">
+                    <button class="myProfession" ng-click="$ctrl.addNewProfession()"><i>+</i></button>
+                    <br/>
+                    <span>Новая профессия</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">CCC</div>
+    </div>
+</div>
