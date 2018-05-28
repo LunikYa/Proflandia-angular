@@ -27,7 +27,7 @@ const App = angular
                 component: 'register'
             })
             .state('accountPage',{
-                url: '/accountPage',
+                url: '/account-page',
                 component: 'accountPage'
         })
         $urlRouterProvider.otherwise('/');
