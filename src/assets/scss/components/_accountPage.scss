@@ -92,9 +92,13 @@
           }
         }
         .addNewProfession {
-          vertical-align: top;
           width: min-content;
-          text-align: center;
+          .myProfession {
+            i {
+              font-size: 4em;
+              color: $primary-color-grey;
+            }
+          }
         }
       }
     }
