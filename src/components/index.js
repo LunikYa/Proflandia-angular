@@ -4,6 +4,7 @@ import PersonalArea from './accountPage/accountPage.module';
 import Register from './register/register.module';
 import ModalWindow from './modalWindow/modalWindow.module';
 import Home from './homePage/home.module';
+import RecommendedProfession from "./recommendedProfessionTest/recommendedProfession.module";
 
 const rootModule = angular
     .module('app.components', [
@@ -11,7 +12,8 @@ const rootModule = angular
         Register,
         PersonalArea,
         ModalWindow,
-        Home        
+        Home,
+        RecommendedProfession
     ])
     .name;
 

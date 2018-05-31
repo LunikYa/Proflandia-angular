@@ -30,6 +30,10 @@ const App = angular
                 url: '/account-page',
                 component: 'accountPage'
         })
+            .state('recommendedProfession',{
+                url: '/recommended-profession',
+                component: 'recommendedProfession'
+            })
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('');
