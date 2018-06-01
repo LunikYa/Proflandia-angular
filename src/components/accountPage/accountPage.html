@@ -1,47 +1,50 @@
 <div class="accountPage">
     <div class="header">
         <ul>
-            <li>LOGO</li>
-            <li><a ng-href="#">главная</a></li>
-            <li><a ng-href="#">профессии</a></li>
-            <li><a ng-href="#">рожица</a></li>
-            <li><a ng-href="#">настройки</a> </li>
+            <li class="accountLogo">LOGO</li>
             <li>
-                <button ng-click="$ctrl.exitAccount()">Close</button>
+                <a ng-click="$ctrl.exitAccount()">выйти из аккаунта</a>
                 <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
             </li>
+            <li><a ng-href="#">профессии</a></li>
+            <li><a ng-href="#">главная</a></li>
         </ul>
     </div>
 
-
-        <div class="account">
-            <div class="accountTop">
-                <div class="accountTopLeft">
-                        Photo
-                </div>
-                    <div class="accountTopRight">
-                        <span>{{$ctrl.userName+" "+$ctrl.userSurname}}</span><br/>
-                        <div><span>Рекомендованные профессии: </span><span>{{5+5}}</span>
-                            <a ng-href="/recommended-profession">Пройти тест</a>
-                        </div>
-                    </div>
+    <div class="account">
+        <div class="accountTop">
+            <div class="accountTopLeft">
+                <img class="userPhoto" src={{$ctrl.user.avatar}}>
             </div>
-
-            <div class="accountBottom">
-                <div class="progressProfession" ng-repeat="profession in $ctrl.userProfessions">
-                    <button class="myProfession" ng-click="$ctrl.goToProfession($event)">{{profession}}</button>
-                    <br/>
-                    <progress max='10' value={{$ctrl.professionProgressLevel}}></progress>
-                    <br/>
-                    {{$ctrl.professionProgressLevel}} уровень
-                </div>
-
-                <div class="addNewProfession">
-                    <button class="myProfession" ng-click="$ctrl.addNewProfession()"><i>+</i></button>
-                    <br/>
-                    <span>Новая профессия</span>
+            <div class="accountTopRight">
+                <span class="userData">{{$ctrl.user.name+" "+$ctrl.user.surname}}</span><br/>
+                <span class="userStatus">Статус: <span>{{2+5}}</span></span>
+                <p>E-mail: <span>{{$ctrl.user.email}}</span></p>
+                <p>Изучено уроков: <span>{{22+5}}</span></p>
+                <p>Пройдено тестов: <span>{{22+3}}</span></p>
+                <div><span>Рекомендованные профессии: </span>
+                    <a ng-href="/recommended-profession">Пройти тест</a>
                 </div>
             </div>
         </div>
-        <div class="footer">CCC</div>
+        <h2>Изучаю</h2>
+        <div class="accountBottom">
+            <div class="progressProfession" ng-repeat="profession in $ctrl.userProfessions">
+                <span>{{profession}}</span>
+                <div class="myProfession"></div>
+                <br/>
+                <progress max='10' value={{3+3}}></progress>
+                <br/>
+                {{3+3}} уровень
+                <button class="toProfession" ng-click="$ctrl.toThisProfession()">К профессии</button>
+            </div>
+            <div class="addNewProfession">
+                <br/>
+                <div class="addNewProfessionButton" ng-click="$ctrl.addNewProfession()">
+                </div>
+                <br/>
+                <span>Добавить профессию</span>
+            </div>
+        </div>
+    </div>
 </div>
