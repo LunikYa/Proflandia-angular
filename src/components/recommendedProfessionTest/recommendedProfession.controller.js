@@ -1,26 +1,27 @@
 class RecommendedProfessionController {
-    constructor($location){
-        this.location=$location;
-        this.exitToLocation=('/account-page');
-        this.modalWindowText=`Вы ответили не на все вопросы! Желаете закончить прохождение теста без получения результатa?`
+    constructor($location) {
+        this.location = $location;
+        this.exitToLocation = ('/account-page');
+        this.modalWindowText = `Вы ответили не на все вопросы! Желаете закончить прохождение теста без получения результатa?`;
     }
-    getResult(){
-        let resultOfRecommendedTest=0;
-        let resultsOfTestArray=[];
-        for(let i in this) {
+
+    getResult() {
+        let resultOfRecommendedTest = 0;
+        let resultsOfTestArray = [];
+        for (let i in this) {
             if (typeof(this[i]) === 'number') {
                 resultsOfTestArray.push(this[i]);
             }
         }
-         if(resultsOfTestArray.length<30){
-             this.showModalWindow=true;
-             //console.log("don't answer "+[30-resultsOfTestArray.length])
-         }
-         else{
-             resultOfRecommendedTest=resultsOfTestArray.reduce((x,y)=>x+y);
-             console.log(resultOfRecommendedTest);
-             this.location.path('/account-page');
-         }
+        if (resultsOfTestArray.length < 30) {
+            this.showModalWindow = true;
+            //console.log("don't answer "+[30-resultsOfTestArray.length])
+        }
+        else {
+            resultOfRecommendedTest = resultsOfTestArray.reduce((x, y) => x + y);
+            console.log(resultOfRecommendedTest);
+            this.location.path('/account-page');
+        }
     }
 }
 
