@@ -1,0 +1,17 @@
+.recommendedProf{
+  background-color: $primary-color-fiolet;
+  //width: 100%;
+  text-align: -webkit-center;
+  form {
+    background-color: $primary-color-lime;
+    width: 90%;
+    text-align: justify;
+    .question {
+      margin: 1em;
+      li{
+        margin-top: 0.5em;
+        list-style: none;
+      }
+    }
+  }
+}

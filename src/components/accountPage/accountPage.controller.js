@@ -1,5 +1,6 @@
 class AccountPageController {
     constructor(){
+        this.exitToLocation=('/');
         this.modalWindowText='Вы уверенны, что хотите выйти?';
     }
     exitAccount() {

@@ -9,8 +9,8 @@ class ModalWindowController {
         this.$scope.$parent.$ctrl.showModalWindow = false;
     }
 
-    exitAccount() {
-        this.$location.path('/');
+    exit() {
+        this.$location.path(this.$scope.$parent.$ctrl.exitToLocation)
     }
 }
 
