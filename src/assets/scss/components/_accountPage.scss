@@ -1,14 +1,9 @@
 .accountPage {
   max-width: 100%;
-  max-height: max-content;
-  background-color: $primary-color-blue;
   text-align: center;
-  margin: 0 auto;
   .header {
     width: 100%;
-    height: 4em;
-    border: 2px solid black;
-    background-color: $primary-color-fiolet;
+    height: 3em;
     ul {
       display: block;
       li {
@@ -21,90 +16,33 @@
       }
     }
   }
-  .main {
-    width: 100%;
-    //height: 80%;
-    clear: left;
-    .mainNav {
-      border: 2px solid black;
-      ul {
-        height: 3em;
-        margin-right: 10em;
-        li {
-          float: right;
-          list-style: none;
-          margin: 1em;
-          a {
-            text-decoration: none;
-            &:active {
-              border-bottom: 2px solid red;
-            }
-          }
-        }
-      }
-    }
-    .account {
-      margin-bottom: 10em;
-      .accountLeft, .accountRight {
-        margin: 0 auto;
-        float: left;
-        width: 50%;
-      }
-      .myPhoto, .myProfession {
-        margin: 0 auto;
-        width: 5em;
-        height: 5em;
-        background-color: silver;
-        border: 2px solid black;
-        border-radius: 10px;
-      }
-      .myAccountData {
+  .account {
+
+    .accountTop {
+      width: 100%;
+      height: 20em;
+      display: flex;
+      background-color: $light-color-grey;
+
+
+      .accountTopRight{
+        padding: 1em;
+        width: 45%;
         text-align: left;
-        div {
-          display: flex;
-          width: 70%;
-          margin: 2em;
-          border-bottom: 2px solid black;
-          float: left;
-          span {
-            width: 50%;
-          }
-        }
+
       }
-      .accountRight {
-        text-align: justify;
-        div {
-          text-align: center;
-          display: inline-block;
-          margin: 1em;
-          progress {
-            width: -webkit-fill-available;
-            height: 0.5em;
-            -webkit-appearance: none;
-          }
-          progress::-webkit-progress-bar {
-            background-color: $primary-color-red;
-            border-radius: 10px;
-            overflow: hidden;
-          }
-          progress::-webkit-progress-value {
-            background-color: $primary-color-lime;
-          }
-        }
-        .addNewProfession {
-          width: min-content;
-          .myProfession {
-            i {
-              font-size: 4em;
-              color: $primary-color-grey;
-            }
-          }
-        }
+      .accountTopLeft{
+        padding: 1em;
+        width: 45%;
+        text-align: right;
       }
+
+    }
+    .accountBottom {
+      height: 10em;
     }
   }
   .footer {
-    clear: left;
     background-color: $primary-color-yellow;
   }
 }

@@ -6,7 +6,8 @@ class AccountPageController {
     }
 
     $onInit() {
-        this.AccountPageService.getUserFromApi().then(res => this.userName = res['name']);
+        this.AccountPageService.getUserFromApi().then(res => {this.userName = res['name'],
+        this.userSurname=res['surname']});
         this.AccountPageService.getUserProfessionsAndLevelFromApi().then(res => this.userProfessions = console.log(res.professions));
     }
 

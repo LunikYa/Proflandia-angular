@@ -2,41 +2,32 @@
     <div class="header">
         <ul>
             <li>LOGO</li>
-            <li><a href="#">профессии</a></li>
-            <li><a href="#">главная</a></li>
-            <li><a href="#">тест</a></li>
-            <li><input type="search" placeholder="поиск"></li>
+            <li><a ng-href="#">главная</a></li>
+            <li><a ng-href="#">профессии</a></li>
+            <li><a ng-href="#">рожица</a></li>
+            <li><a ng-href="#">настройки</a> </li>
+            <li>
+                <button ng-click="$ctrl.exitAccount()">Close</button>
+                <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
+            </li>
         </ul>
-        <button ng-click="$ctrl.exitAccount()">Close</button>
-        <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
     </div>
-    <div class="main">
-        <nav class="mainNav">
-            <ul>
-                <li><a href="#">Изучаю</a></li>
-                <li><a href="#">Мои друзья</a></li>
-                <li><a href="#">Статистика</a></li>
-                <li><a href="#">Награды</a></li>
-            </ul>
-        </nav>
+
+
         <div class="account">
             <div class="accountTop">
-                <h2>Аккаунт</h2>
-            </div>
-            <div class="accountLeft">
-                <div>
-                    <span>{{$ctrl.userName}}</span><br/>
-                    <img class="myPhoto">
-                    </img>
+                <div class="accountTopLeft">
+                        Photo
                 </div>
-                <div class="myAccountData">
-<!--                    <div><span>Пол: </span><span>{{2+3}}</span></div>
-                    <div><span>Возраст: </span><span>{{3+3}}</span></div>-->
-                    <div><span>Рекомендованные профессии: </span><span>{{5+5}}</span></div>
+                    <div class="accountTopRight">
+                        <span>{{$ctrl.userName+" "+$ctrl.userSurname}}</span><br/>
+                        <div><span>Рекомендованные профессии: </span><span>{{5+5}}</span>
+                            <a ng-href="/recommended-profession">Пройти тест</a>
+                        </div>
+                    </div>
+            </div>
 
-                </div>
-            </div>
-            <div class="accountRight">
+            <div class="accountBottom">
                 <div class="progressProfession" ng-repeat="profession in $ctrl.userProfessions">
                     <button class="myProfession" ng-click="$ctrl.goToProfession($event)">{{profession}}</button>
                     <br/>
@@ -53,5 +44,4 @@
             </div>
         </div>
         <div class="footer">CCC</div>
-    </div>
 </div>
