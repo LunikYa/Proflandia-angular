@@ -1,106 +1,131 @@
 .accountPage {
   max-width: 100%;
-  max-height: max-content;
-  background-color: $primary-color-blue;
   text-align: center;
-  margin: 0 auto;
   .header {
     width: 100%;
-    height: 4em;
-    border: 2px solid black;
-    background-color: $primary-color-fiolet;
+    height: 3em;
     ul {
-      display: block;
-      li {
+      .accountLogo {
         float: left;
+      }
+      li {
+        float: right;
         margin: 1em;
         list-style: none;
         a {
           text-decoration: none;
         }
-      }
-    }
-  }
-  .main {
-    width: 100%;
-    //height: 80%;
-    clear: left;
-    .mainNav {
-      border: 2px solid black;
-      ul {
-        height: 3em;
-        margin-right: 10em;
-        li {
-          float: right;
-          list-style: none;
-          margin: 1em;
-          a {
-            text-decoration: none;
-            &:active {
-              border-bottom: 2px solid red;
-            }
-          }
+        a:hover {
+          cursor: pointer;
+        }
+        img {
+          width: 1em;
+          height: 1em;
         }
       }
     }
-    .account {
-      margin-bottom: 10em;
-      .accountLeft, .accountRight {
-        margin: 0 auto;
-        float: left;
-        width: 50%;
-      }
-      .myPhoto, .myProfession {
-        margin: 0 auto;
-        width: 5em;
-        height: 5em;
-        background-color: silver;
-        border: 2px solid black;
-        border-radius: 10px;
-      }
-      .myAccountData {
+  }
+  .account {
+    .accountTop {
+      width: 100%;
+      height: 21em;
+      display: flex;
+      background: url('../../assets/img/account-background.png') no-repeat 100% 100%;
+      background-size: cover;
+      .accountTopRight {
+        padding: 1em;
+        width: 45%;
         text-align: left;
-        div {
-          display: flex;
-          width: 70%;
-          margin: 2em;
-          border-bottom: 2px solid black;
-          float: left;
+        .userData {
+          font-weight: bold;
+          font-size: 2.5em;
+        }
+        .userStatus {
+          border-bottom: 2px solid $primary-color-fiolet;
+          line-height: 3em;
           span {
-            width: 50%;
+            margin: 1em;
+            font-weight: bold;
+          }
+        }
+        p {
+          margin-top: 0.5em;
+          span {
+            margin: 1em;
+            font-weight: bold;
           }
         }
       }
-      .accountRight {
-        text-align: justify;
-        div {
-          text-align: center;
-          display: inline-block;
-          margin: 1em;
-          progress {
-            width: -webkit-fill-available;
-            height: 0.5em;
-            -webkit-appearance: none;
-          }
-          progress::-webkit-progress-bar {
-            background-color: $primary-color-red;
-            border-radius: 10px;
-            overflow: hidden;
-          }
-          progress::-webkit-progress-value {
-            background-color: $primary-color-lime;
-          }
-        }
-        .addNewProfession {
-          vertical-align: top;
-          width: min-content;
-          text-align: center;
+      .accountTopLeft {
+        text-align: right;
+        margin: 1em;
+        width: 45%;
+        background: url('../../assets/img/account-photo-background.png') no-repeat;
+        background-size: 20em;
+        background-position: right top;
+        .userPhoto {
+          width: 10em;
+          height: 10em;
+          margin: 3em;
+          background: url('../../assets/img/user.png') no-repeat center;
+          border-radius: 50%;
+          background-color: white;
+          overflow: hidden;
         }
       }
     }
-  }
-  .footer {
-    clear: left;
-    background-color: $primary-color-yellow;
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 2em;
+    }
+    .accountBottom {
+      height: 10em;
+      padding: 3em;
+      display: flex;
+      .addNewProfession {
+        width: min-content;
+        height: min-content;
+        .addNewProfessionButton {
+          cursor: pointer;
+          width: 8em;
+          height: 8em;
+          border-radius: 50%;
+          background: $light-color-grey url('../../assets/img/add-profession.png') no-repeat center;
+        }
+      }
+      .progressProfession {
+        display: block;
+        width: 8em;
+        height: 8em;
+        margin-right: 2em;
+        .myProfession {
+          width: 8em;
+          height: 8em;
+          border-radius: 50%;
+          background-color: $light-color-grey;
+        }
+        progress {
+          width: -webkit-fill-available;
+          height: 0.5em;
+          -webkit-appearance: none;
+        }
+        progress::-webkit-progress-bar {
+          background-color: $primary-color-red;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+        progress::-webkit-progress-value {
+          background-color: $primary-color-lime;
+        }
+        .toProfession {
+          width: inherit;
+          height: 2em;
+          color: $primary-color-white;
+          border-radius: 2em;
+          background-color: $primary-color-fiolet;
+        }
+      }
+    }
   }
 }

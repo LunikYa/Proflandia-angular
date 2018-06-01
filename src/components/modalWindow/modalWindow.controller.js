@@ -10,7 +10,7 @@ class ModalWindowController {
     }
 
     exit() {
-        this.$location.path(this.$scope.$parent.$ctrl.exitToLocation)
+        this.$location.path(this.$scope.$parent.$ctrl.exitToLocation);
     }
 }
 

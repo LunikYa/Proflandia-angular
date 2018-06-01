@@ -1,57 +1,50 @@
 <div class="accountPage">
     <div class="header">
         <ul>
-            <li>LOGO</li>
-            <li><a href="#">профессии</a></li>
-            <li><a href="#">главная</a></li>
-            <li><a href="#">тест</a></li>
-            <li><input type="search" placeholder="поиск"></li>
+            <li class="accountLogo">LOGO</li>
+            <li>
+                <a ng-click="$ctrl.exitAccount()">выйти из аккаунта</a>
+                <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
+            </li>
+            <li><a ng-href="#">профессии</a></li>
+            <li><a ng-href="#">главная</a></li>
         </ul>
-        <button ng-click="$ctrl.exitAccount()">Close</button>
-        <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
     </div>
-    <div class="main">
-        <nav class="mainNav">
-            <ul>
-                <li><a href="#">Изучаю</a></li>
-                <li><a href="#">Мои друзья</a></li>
-                <li><a href="#">Статистика</a></li>
-                <li><a href="#">Награды</a></li>
-            </ul>
-        </nav>
-        <div class="account">
-            <div class="accountTop">
-                <h2>Аккаунт</h2>
-            </div>
-            <div class="accountLeft">
-                <div>
-                    <span>{{111+111}}</span><br/>
-                    <img class="myPhoto">
-                    </img>
-                </div>
-                <div class="myAccountData">
-                    <div><span>Пол: </span><span>{{2+3}}</span></div>
-                    <div><span>Возраст: </span><span>{{3+3}}</span></div>
-                    <div><span>Рекомендованные профессии: </span><span>{{5+5}}</span>
-                        <a ng-href="/recommended-profession">Пройти тест</a></div>
-                </div>
-            </div>
-            <div class="accountRight">
-                <div class="progressProfession">
-                    <button class="myProfession" ng-click="$ctrl.addNewProfession()">{{3+6}}</button>
-                    <br/>
-                    <progress max='10' value={{2+2}}></progress>
-                    <br/>
-                    {{2+2}} уровень
-                </div>
 
-                <div class="addNewProfession">
-                    <button class="myProfession" ng-click="$ctrl.addNewProfession()"><i>+</i></button>
-                    <br/>
-                    <span>Новая профессия</span>
+    <div class="account">
+        <div class="accountTop">
+            <div class="accountTopLeft">
+                <img class="userPhoto" src={{$ctrl.user.avatar}}>
+            </div>
+            <div class="accountTopRight">
+                <span class="userData">{{$ctrl.user.name+" "+$ctrl.user.surname}}</span><br/>
+                <span class="userStatus">Статус: <span>{{2+5}}</span></span>
+                <p>E-mail: <span>{{$ctrl.user.email}}</span></p>
+                <p>Изучено уроков: <span>{{22+5}}</span></p>
+                <p>Пройдено тестов: <span>{{22+3}}</span></p>
+                <div><span>Рекомендованные профессии: </span>
+                    <a ng-href="/recommended-profession">Пройти тест</a>
                 </div>
             </div>
         </div>
-        <div class="footer">CCC</div>
+        <h2>Изучаю</h2>
+        <div class="accountBottom">
+            <div class="progressProfession" ng-repeat="profession in $ctrl.userProfessions">
+                <span>{{profession}}</span>
+                <div class="myProfession"></div>
+                <br/>
+                <progress max='10' value={{3+3}}></progress>
+                <br/>
+                {{3+3}} уровень
+                <button class="toProfession" ng-click="$ctrl.toThisProfession()">К профессии</button>
+            </div>
+            <div class="addNewProfession">
+                <br/>
+                <div class="addNewProfessionButton" ng-click="$ctrl.addNewProfession()">
+                </div>
+                <br/>
+                <span>Добавить профессию</span>
+            </div>
+        </div>
     </div>
 </div>
