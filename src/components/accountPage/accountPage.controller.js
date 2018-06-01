@@ -1,7 +1,8 @@
 class AccountPageController {
     constructor(AccountPageService) {
         this.AccountPageService = AccountPageService;
-        this.modalWindowText = 'Вы уверенны, что хотите выйти?';
+        this.exitToLocation=('/');
+        this.modalWindowText='Вы уверенны, что хотите выйти?';
     }
 
     $onInit() {
