@@ -1,0 +1,23 @@
+API: proflandia.herokuapp.com/lessons/:profession
+
+GET `/lessons/:profession`    
+return a lessons for profession
+example: .get('proflandia.herokuapp.com/lessons/designer') 
+result: [{"_id":"5b0f21a482e6990014801311","name":"name01","level":1,"profession":"designer","content":"Content Content Content Content Content Content Content"},{"_id":"5b0f21a582e6990014801316","name":"name11","level":2,"profession":"designer","content":"Content Content Content Content Content Content Content"},{"_id":"5b0f21a582e699001480131b","name":"name21","level":3,"profession":"designer","content":"Content Content Content Content Content Content Content"},{"_id":"5b0f21a582e6990014801320","name":"name31","level":4,"profession":"designer","content":"Content Content Content Content Content Content Content"},{"_id":"5b0f21a582e6990014801325","name":"name41","level":5,"profession":"designer","content":"Content Content Content Content Content Content Content"}]
+
+GET `/professions` 
+return array professions
+example: .get('proflandia.herokuapp.com/professions') 
+result: [{"_id":"5b11c487c925d7001477a329","name":"designer","rus":"дизайнер","numberLessons":12},{"_id":"5b11c487c925d7001477a343","name":"teacher","rus":"учитель","numberLessons":12},{"_id":"5b11c488c925d7001477a35d","name":"builder","rus":"строитель","numberLessons":12},{"_id":"5b11c489c925d7001477a377","name":"doctor","rus":"доктор","numberLessons":12},{"_id":"5b11c489c925d7001477a391","name":"cook","rus":"повар","numberLessons":12}]
+
+GET `/user/:useremail`,
+example .get('proflandia.herokuapp.com/user/vasya@com.ua')
+result: {"_id":"5b0f21a782e6990014801392","email":"vasya@com.ua","name":"vasya","surname":"Alex",  "avatar":"","professions":[{"profession":"cook","currentLevel":3}]
+
+GET `/questions/:lessonId`
+example: .get('http://proflandia.herokuapp.com/questions/5b11c487c925d7001477a32a')
+result: [{"_id":"5b11c487c925d7001477a32b","question":"How are u ?","correctAnswer":"human","variants":["dog","phone","telepuzik"],"lessonId":"5b11c487c925d7001477a32a","number":1},{"_id":"5b11c487c925d7001477a32c","question":"What are u doing?","correctAnswer":"pelmeni","variants":["tort","blin","pelmeni"],"lessonId":"5b11c487c925d7001477a32a","number":2},{"_id":"5b11c487c925d7001477a32d","question":"How are u ?","correctAnswer":"human","variants":["dog","phone","telepuzik"],"lessonId":"5b11c487c925d7001477a32a","number":3},{"_id":"5b11c487c925d7001477a32e","question":"How are u ?","correctAnswer":"human","variants":["dog","phone","telepuzik"],"lessonId":"5b11c487c925d7001477a32a","number":4}]
+
+PUT `/profession` + {email: ..., profession: ...}
+example .put('http://proflandia.herokuapp.com/profession', {email: vasya@com.ua, profession: 'cook'})
+result add new prof, return user with new prof
