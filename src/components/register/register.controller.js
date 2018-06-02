@@ -22,6 +22,7 @@ class RegisterController {
                     console.log(res)
                     localStorage.setItem('token', res.token)
                     localStorage.setItem('useremail', res.email)
+                    localStorage.setItem('user', res)
                     this.$state.go('accountPage')
                 },
                 rej => console.log('reject', rej)

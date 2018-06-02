@@ -12,7 +12,7 @@ async function server() {
     const db    = await mongoCl.connect();
     const stats = await db.stats();
     
-    if (!stats.indexes)
+    // if (!stats.indexes)
         await initialDb();
     
     app.use(bodyParser());     
