@@ -16,10 +16,10 @@ class AccountPageController {
     }
 
     addNewProfession() {
-        console.log('addNewProfession()')
+        console.log('addNewProfession()');
     }
 
-    toThisProfession(currentProfession) {
+    toCurrentProfession(currentProfession) {
         this.professionLessons = this.AccountPageService.getLessonsForProfessionFromApi(currentProfession).then(res => console.log(res))
     }
     $onDestroy(){
