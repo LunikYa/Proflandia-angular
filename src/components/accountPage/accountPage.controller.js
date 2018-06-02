@@ -1,8 +1,9 @@
 class AccountPageController {
-    constructor(AccountPageService) {
+    constructor(AccountPageService, $location) {
         this.AccountPageService = AccountPageService;
         this.exitToLocation = ('/');
         this.modalWindowText = 'Вы уверенны, что хотите выйти?';
+        this.$location=$location;
     }
 
     $onInit() {
@@ -14,12 +15,17 @@ class AccountPageController {
         this.showModalWindow = true;
     }
 
-    addNewProfession(event) {
-        this.professionLessons = this.AccountPageService.getLessonsForProfessionFromApi(event.target.innerText).then(res => console.log(res))
+    addNewProfession() {
+        console.log('addNewProfession()')
     }
 
-    toThisProfession() {
-        console.log('toThisProfession()')
+    toThisProfession(currentProfession) {
+        this.professionLessons = this.AccountPageService.getLessonsForProfessionFromApi(currentProfession).then(res => console.log(res))
+    }
+    $onDestroy(){
+        if(this.$location.$$path==='/') {
+            localStorage.clear();
+        }
     }
 }
 

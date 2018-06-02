@@ -14,29 +14,29 @@
     <div class="account">
         <div class="accountTop">
             <div class="accountTopLeft">
-                <img class="userPhoto" src={{$ctrl.user.avatar}}>
+                <img class="userPhoto" ng-src={{$ctrl.user.avatar}}>
             </div>
             <div class="accountTopRight">
                 <span class="userData">{{$ctrl.user.name+" "+$ctrl.user.surname}}</span><br/>
-                <span class="userStatus">Статус: <span>{{2+5}}</span></span>
+                <span class="userStatus">Статус: <span>{{'нови'+'чок'}}</span></span>
                 <p>E-mail: <span>{{$ctrl.user.email}}</span></p>
                 <p>Изучено уроков: <span>{{22+5}}</span></p>
                 <p>Пройдено тестов: <span>{{22+3}}</span></p>
-                <div><span>Рекомендованные профессии: </span>
-                    <a ng-href="/recommended-profession">Пройти тест</a>
-                </div>
+                <p>Рекомендованные профессии:
+                    <span><a ng-href="/recommended-profession">Пройти тест</a></span></p>
             </div>
         </div>
         <h2>Изучаю</h2>
         <div class="accountBottom">
-            <div class="progressProfession" ng-repeat="profession in $ctrl.userProfessions">
-                <span>{{profession}}</span>
+            <div class="progressProfession" ng-repeat="professions in $ctrl.userProfessions">
+                <span>{{professions.profession}}</span>
                 <div class="myProfession"></div>
                 <br/>
-                <progress max='10' value={{3+3}}></progress>
+                <progress max='10' value={{professions.currentLevel}}></progress>
                 <br/>
-                {{3+3}} уровень
-                <button class="toProfession" ng-click="$ctrl.toThisProfession()">К профессии</button>
+                {{professions.currentLevel}} уровень
+                <button class="toProfession" ng-click="$ctrl.toThisProfession(professions.profession)">К профессии
+                </button>
             </div>
             <div class="addNewProfession">
                 <br/>
