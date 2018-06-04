@@ -155,7 +155,7 @@
             <li><input type="radio" ng-value="1" name="question30" ng-model="$ctrl.question30">Затрудняюсь ответить.</li>
             <li><input type="radio" ng-value="0" name="question30" ng-model="$ctrl.question30">Раздражаюсь и злюсь.</li>
         </ul>
-        <button ng-click="$ctrl.getResult($ctrl.form)">Узнать результат</button>
     </form>
+    <button ng-click="$ctrl.getResult($ctrl.form)" class="recommendedTestButton">Узнать результат</button>
     <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
 </div>
