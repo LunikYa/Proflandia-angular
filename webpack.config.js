@@ -38,7 +38,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jp(e*)g|svg|eot|ttf|woff|woff2|otf)$/,  
-                use: [{loader: 'url-loader'}]
+                use: [{loader: 'url-loader'}, {loader: 'image-webpack-loader'}]
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -64,6 +64,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Hot Module Replacement',
+            favicon: '../static/favicon.png',
             template: 'index.html',
         }),
         new webpack.NamedModulesPlugin(),
