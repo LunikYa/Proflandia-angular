@@ -85,7 +85,7 @@
     }
     .accountBottom {
       height: 10em;
-      padding: 3em;
+      padding: 2em;
       display: flex;
       .addNewProfession {
         width: min-content;
@@ -99,15 +99,38 @@
         }
       }
       .progressProfession {
-        display: block;
-        width: 8em;
-        height: 8em;
+        width: min-content;
+        height: min-content;
         margin-right: 2em;
-        .myProfession {
+        .cook {
           width: 8em;
           height: 8em;
-          border-radius: 50%;
-          background-color: $light-color-grey;
+          background:  url('../../assets/img/account-profession-cook.png') center;
+          background-size: 100% 100%;
+        }
+        .designer{
+            width: 8em;
+            height: 8em;
+            background:  url('../../assets/img/account-profession-designer.png') center no-repeat;
+            background-size: contain;
+        }
+        .teacher{
+          width: 8em;
+          height: 8em;
+          background:  url('../../assets/img/account-profession-teacher.png') center;
+          background-size: cover;
+        }
+        .builder {
+          width: 8em;
+          height: 8em;
+          background:  url('../../assets/img/account-profession-builder.png') center;
+          background-size: 100% 100%;
+        }
+        .doctor {
+          width: 8em;
+          height: 8em;
+          background:  url('../../assets/img/account-profession-doctor.png') center no-repeat;
+          background-size: contain;
         }
         progress {
           width: -webkit-fill-available;
@@ -123,11 +146,11 @@
           background-color: $primary-color-lime;
         }
         .toProfession {
-          width: inherit;
           height: 2em;
           color: $primary-color-white;
           border-radius: 2em;
           background-color: $primary-color-fiolet;
+          padding: 0 0.5em;
         }
       }
     }

@@ -23,14 +23,20 @@
                 <p>Изучено уроков: <span>{{22+5}}</span></p>
                 <p>Пройдено тестов: <span>{{22+3}}</span></p>
                 <p>Рекомендованные профессии:
-                    <span><a ng-href="/recommended-profession">Пройти тест</a></span></p>
+                    <span><a ng-href="/recommended-profession"
+                             ng-show="$ctrl.$rootScope.recommendedProfession.length===0">Пройти тест</a></span>
+                    <span ng-repeat="recommendedProfession in $ctrl.$rootScope.recommendedProfession"
+                          ng-show="$ctrl.$rootScope.recommendedProfession.length>0">
+                    {{recommendedProfession}}
+                </span>
+                </p>
             </div>
         </div>
         <h2>Изучаю</h2>
         <div class="accountBottom">
             <div class="progressProfession" ng-repeat="professions in $ctrl.userProfessions">
                 <span>{{professions.profession}}</span>
-                <div class="myProfession"></div>
+                <div class={{professions.profession}}></div>
                 <br/>
                 <progress max='10' value={{professions.currentLevel}}></progress>
                 <br/>

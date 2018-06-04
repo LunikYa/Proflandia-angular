@@ -1,9 +1,7 @@
 .recommendedProf{
-  background-color: $primary-color-fiolet;
-  //width: 100%;
-  text-align: -webkit-center;
+  text-align: center;
+  background-color: $primary-color-lime;
   form {
-    background-color: $primary-color-lime;
     width: 90%;
     text-align: justify;
     .question {
@@ -13,5 +11,12 @@
         list-style: none;
       }
     }
+  }
+  .recommendedTestButton{
+    height: 2em;
+    color: $primary-color-white;
+    border-radius: 2em;
+    background-color: $primary-color-fiolet;
+    padding: 0 0.5em;
   }
 }
