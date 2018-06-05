@@ -6,8 +6,9 @@ module.exports.regUser = async function (ctx){
     const db       = clientDb.getDB();
     const tempUser = ctx.request.body;
     const matches  = await db.collection('users').findOne({ email: tempUser.email });
-    tempUser.avatar = ''
+    tempUser.avatar = null
     tempUser.professions = []
+    tempUser.recomendedProfession = null
     if (matches){   
         ctx.response.status  = 401;
         ctx.response.message = `Such email already exists - ${tempUser.email}`;
@@ -42,7 +43,8 @@ module.exports.loginUser = async function (ctx){
             surname: match.surname,
             token: token,
             avatar: match.avatar,
-            professions: match.professions
+            professions: match.professions,
+            recomendedProfession: match.recomendedProfession
         }
     } else {
         ctx.response.status  = 401;

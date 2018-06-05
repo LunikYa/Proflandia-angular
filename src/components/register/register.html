@@ -1,5 +1,6 @@
 <div class='conteiner-form'>
-    <h2 class="caption-h2">Register</h2>
+    <header-component></header-component>
+    <h2 class="caption-h2">Регистрация</h2>
     <form name='login' noValidate method='post' ng-submit="$ctrl.registerUser($event)">
 
         <input type='email' name='email' placeholder='Введите свой е-мейл'
@@ -30,7 +31,7 @@
         />
         <div class='errormsg'>{{$ctrl.surnameError}}</div>
         
-        <button class='button' type="submit">Submit</button>
+        <button class='button' type="submit">Отправить</button>
     </form>
     <a class='link'href="/login">Go to Login</a>
 </div>

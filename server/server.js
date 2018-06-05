@@ -6,13 +6,13 @@ const cors       = require('koa2-cors')
 const app        = new Koa();
 const hostname   = 'proflandia.herokuapp.com';
 const port       = process.env.PORT || 8000;
-const initialDb = require('./db/setup');
-// proflandia.herokuapp.com
+const initialDb  = require('./db/setup');
+
 async function server() {
     const db    = await mongoCl.connect();
     const stats = await db.stats();
     
-    // if (!stats.indexes)
+    if (!stats.indexes)
         await initialDb();
     
     app.use(bodyParser());     

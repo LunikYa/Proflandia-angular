@@ -17,7 +17,7 @@ class AppController {
                 pathTo !== 'login' &&
                 pathTo !== 'home' && !token) {
                 
-                return transition.router.stateService.target('login')
+                return transition.router.stateService.target('home')
             }
         })
         this.$transitions.onFinish({}, transition=>{

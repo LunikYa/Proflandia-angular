@@ -1,0 +1,44 @@
+<div class="home-wrapper ">
+    <div class="header-top-line home-wrapper">
+        <div class="header-logo">
+        </div>
+        <nav>
+            <ul class="header-nav-ul">
+                <a href="/account-page"><li class="image-go-to-account"></li></a>
+            </ul>
+        </nav>
+    </div>
+    <h2 class="caption-adder">ПРОФЕССИИ</h2>
+    <div class="all-prof-flex-conteiner">
+        <div class="item-prof-box">
+            <div class="adder-name-profession">Врач</div>
+            <div class="adder-item-image item-image-doctor"></div>
+            <div class="adder-item-button" ng-click="$ctrl.addNewProf('doctor')" ng-if="!$ctrl.doctor">Изучать</div>
+            <div class="adder-item-success-disable" ng-if="$ctrl.doctor">Добавлено</div>
+        </div>
+        <div class="item-prof-box">
+            <div class="adder-name-profession">Дизайнер</div>
+            <div class="adder-item-image item-image-designer"></div>
+            <div class="adder-item-button" ng-click="$ctrl.addNewProf('designer')" ng-if="!$ctrl.designer">Изучать</div>
+            <div class="adder-item-success-disable" ng-if="$ctrl.designer">Добавлено</div>
+        </div>
+        <div class="item-prof-box">
+            <div class="adder-name-profession">Строитель</div>
+            <div class="adder-item-image item-image-builder"></div>
+            <div class="adder-item-button" ng-click="$ctrl.addNewProf('builder')" ng-if="!$ctrl.builder">Изучать</div>
+            <div class="adder-item-success-disable" ng-if="$ctrl.builder">Добавлено</div>
+        </div>
+        <div class="item-prof-box">
+            <div class="adder-name-profession">Учитель</div>
+            <div class="adder-item-image item-image-teacher"></div>
+            <div class="adder-item-button" ng-click="$ctrl.addNewProf('teacher')" ng-if="!$ctrl.teacher">Изучать</div>
+            <div class="adder-item-success-disable" ng-if="$ctrl.teacher">Добавлено</div>
+        </div>
+        <div class="item-prof-box">
+            <div class="adder-name-profession">Повар</div>
+            <div class="adder-item-image item-image-cook"></div>
+            <div class="adder-item-button" ng-click="$ctrl.addNewProf('cook')" ng-if="!$ctrl.cook">Изучать</div>
+            <div class="adder-item-success-disable" ng-if="$ctrl.cook">Добавлено</div>
+        </div>
+    </div>
+</div>
