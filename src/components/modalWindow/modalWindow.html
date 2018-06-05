@@ -1,7 +1,7 @@
 <div class="modalWindowMain">
     <div class="modalWindow">
         <div class="close" ng-click="$ctrl.closeModal()">X</div>
-        <h2>{{$ctrl.modalWindowText}}</h2>
+        <h2>{{$ctrl.$rootScope.modalWindowText}}</h2>
         <button ng-click="$ctrl.closeModal()">Нет</button>
         <button ng-click="$ctrl.exit()">Да</button>
     </div>
