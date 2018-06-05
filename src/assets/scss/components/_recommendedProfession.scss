@@ -1,22 +1,57 @@
-.recommendedProf{
+.recommendedProf {
+  .recommendedProfHeader {
+    width: 100%;
+    height: 3em;
+    background-color: $light-color-grey;
+    ul {
+      .accountLogo {
+        float: left;
+      }
+      li {
+        float: right;
+        margin: 1em;
+        list-style: none;
+        a {
+          text-decoration: none;
+        }
+        a:hover {
+          cursor: pointer;
+        }
+        img {
+          width: 1em;
+          height: 1em;
+        }
+      }
+    }
+  }
   text-align: center;
-  background-color: $primary-color-lime;
+  article {
+    padding: 2em;
+    background-color: $primary-color-white;
+  }
+
   form {
-    width: 90%;
+    background: $primary-color-yellow url('../../assets/img/account-background.png') no-repeat;
+    background-size: 100%;
+    padding: 2em;
     text-align: justify;
     .question {
       margin: 1em;
-      li{
+      li {
         margin-top: 0.5em;
         list-style: none;
       }
     }
   }
-  .recommendedTestButton{
+  .recommendedTestButton {
     height: 2em;
     color: $primary-color-white;
     border-radius: 2em;
     background-color: $primary-color-fiolet;
     padding: 0 0.5em;
+  }
+  .recommendedTestButton:hover {
+    transform: scale(1.1);
+    transition: all 1s;
   }
 }

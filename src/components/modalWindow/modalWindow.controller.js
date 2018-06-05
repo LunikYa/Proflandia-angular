@@ -1,16 +1,19 @@
 class ModalWindowController {
-    constructor($scope, $location) {
+    constructor($scope, $location, $rootScope) {
         this.$scope = $scope;
         this.$location = $location;
-        this.modalWindowText = this.$scope.$parent.$ctrl.modalWindowText;
+        this.$rootScope = $rootScope;
     }
 
     closeModal() {
-        this.$scope.$parent.$ctrl.showModalWindow = false;
+        this.$rootScope.showModalWindow = false;
     }
 
     exit() {
-        this.$location.path(this.$scope.$parent.$ctrl.exitToLocation);
+        this.$location.path(this.$rootScope.exitToLocation);
+        if(this.$location.$$path==='/') {
+            localStorage.clear();
+        }
     }
 }
 

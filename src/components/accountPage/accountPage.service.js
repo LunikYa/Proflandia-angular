@@ -10,17 +10,6 @@ class AccountPageService {
         return this.$http.get(ApiUrl + '/user/' + this.userEmail)
             .then(response => response.data)
     }
-
-    getUserProfessionsAndLevelFromApi() {
-        return this.$http.get(ApiUrl + '/user/' + this.userEmail)
-            .then(response => response.data)
-
-    }
-
-    getLessonsForProfessionFromApi(profession) {
-        return this.userProfessions = this.$http.get(ApiUrl + '/lessons/' + profession)
-            .then(response => response.data)
-    }
 }
 
 export default AccountPageService

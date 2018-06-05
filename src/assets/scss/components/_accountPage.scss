@@ -54,7 +54,7 @@
           span {
             margin: 1em;
             font-weight: bold;
-            a{
+            a {
               border-bottom: 2px dashed $primary-color-fiolet;
             }
           }
@@ -97,6 +97,10 @@
           border-radius: 50%;
           background: $light-color-grey url('../../assets/img/add-profession.png') no-repeat center;
         }
+        .addNewProfessionButton:hover {
+          transform: scale(1.1);
+          transition: all 1s;
+        }
       }
       .progressProfession {
         width: min-content;
@@ -105,31 +109,31 @@
         .cook {
           width: 8em;
           height: 8em;
-          background:  url('../../assets/img/account-profession-cook.png') center;
-          background-size: 100% 100%;
+          background: url('../../assets/img/account-profession-cook.png') center no-repeat;
+          background-size: contain;
         }
-        .designer{
-            width: 8em;
-            height: 8em;
-            background:  url('../../assets/img/account-profession-designer.png') center no-repeat;
-            background-size: contain;
-        }
-        .teacher{
+        .designer {
           width: 8em;
           height: 8em;
-          background:  url('../../assets/img/account-profession-teacher.png') center;
-          background-size: cover;
+          background: url('../../assets/img/account-profession-designer.png') center no-repeat;
+          background-size: contain;
+        }
+        .teacher {
+          width: 8em;
+          height: 8em;
+          background: url('../../assets/img/account-profession-teacher.png') center no-repeat;
+          background-size: contain;
         }
         .builder {
           width: 8em;
           height: 8em;
-          background:  url('../../assets/img/account-profession-builder.png') center;
-          background-size: 100% 100%;
+          background: url('../../assets/img/account-profession-builder.png') center no-repeat;
+          background-size: contain;
         }
         .doctor {
           width: 8em;
           height: 8em;
-          background:  url('../../assets/img/account-profession-doctor.png') center no-repeat;
+          background: url('../../assets/img/account-profession-doctor.png') center no-repeat;
           background-size: contain;
         }
         progress {
@@ -151,6 +155,10 @@
           border-radius: 2em;
           background-color: $primary-color-fiolet;
           padding: 0 0.5em;
+        }
+        .toProfession:hover {
+          transform: scale(1.1);
+          transition: all 1s;
         }
       }
     }

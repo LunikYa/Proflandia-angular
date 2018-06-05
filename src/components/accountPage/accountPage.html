@@ -4,10 +4,9 @@
             <li class="accountLogo">LOGO</li>
             <li>
                 <a ng-click="$ctrl.exitAccount()">выйти из аккаунта</a>
-                <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
+                <modal-window ng-show="$ctrl.$rootScope.showModalWindow"></modal-window>
             </li>
-            <li><a ng-href="#">профессии</a></li>
-            <li><a ng-href="#">главная</a></li>
+            <li><a ng-href="#"><img src="../../assets/img/user.png"></a></li>
         </ul>
     </div>
 
@@ -34,7 +33,7 @@
         </div>
         <h2>Изучаю</h2>
         <div class="accountBottom">
-            <div class="progressProfession" ng-repeat="professions in $ctrl.userProfessions">
+            <div class="progressProfession" ng-repeat="professions in $ctrl.user.professions">
                 <span>{{professions.profession}}</span>
                 <div class={{professions.profession}}></div>
                 <br/>
