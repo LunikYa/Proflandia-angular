@@ -1,0 +1,267 @@
+.conteiner-profession-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.prof-page-title {
+    text-transform: uppercase;
+    font-family: oks;
+    font-size: 40px;
+    margin-top: 0px;
+}
+.prof-image-title {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 250px;
+    height: 250px;
+}
+.prof-image-title.prof-image-title-doctor {
+    background-image: url('../../assets/img/add-doctor.png');
+}
+.prof-image-title.prof-image-title-cook {
+    background-image: url('../../assets/img/add-cook.png');
+}
+.prof-image-title.prof-image-title-designer {
+    background-image: url('../../assets/img/add-designer.png');
+}
+.prof-image-title.prof-image-title-teacher {
+    background-image: url('../../assets/img/add-teacher.png');
+}
+.prof-image-title.prof-image-title-builder {
+    background-image: url('../../assets/img/add-builder.png');
+}
+.prof-page-description {
+    font-size: 14px;
+    font-family: "Arial";
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+.prof-page-lesson-title {
+    @extend .prof-page-description;
+    font-size: 24px;
+    margin-top: 40px;
+}
+.prof-page-lesson-attempt {
+    margin-top: 10px;
+    font-size: 11px;
+    font-family: "Arial";
+    color: rgb(190, 190, 190);
+    font-weight: 600;
+    text-align: center;
+}
+.prof-page-item-conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+.prof-page-lesson-conteiner {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 580px;
+    overflow: hidden;
+}
+.button-lesson-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: 'Arial';
+    width: 120px;
+    height: 30px;
+    background-color: $primary-color-fiolet;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+}
+.button-lesson-item:hover {
+    transform: scale(1.1)
+}
+.image-lesson-item {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
+.name-lesson-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Arial';
+    text-transform: capitalize;
+}
+.disable-lessons {
+    opacity: 0.9;
+    filter: grayscale(60%);
+    -webkit-filter: grayscale(60%);
+    transition: filter 0.5s ease;
+    -webkit-transition: filter 0.5s ease;
+}
+.disable-lessons:hover{
+    transform: none;
+    cursor: initial;
+}
+.image-lesson-item-designer-1 {
+    background-image: url('../../assets/img/icons/designer/1_basics.png');
+}
+.image-lesson-item-designer-2 {
+    background-image: url('../../assets/img/icons/designer/2_forms.png');
+}
+.image-lesson-item-designer-3 {
+    background-image: url('../../assets/img/icons/designer/3_shine.png');
+}
+.image-lesson-item-designer-4 {
+    background-image: url('../../assets/img/icons/designer/4_shadow.png');
+}
+.image-lesson-item-designer-5 {
+    background-image: url('../../assets/img/icons/designer/5_contrast.png');
+}
+.image-lesson-item-designer-6 {
+    background-image: url('../../assets/img/icons/designer/6_nuans.png');
+}
+.image-lesson-item-designer-7 {
+    background-image: url('../../assets/img/icons/designer/7_factura.png');
+}
+.image-lesson-item-designer-8 {
+    background-image: url('../../assets/img/icons/designer/8_colors.png');
+}
+.image-lesson-item-designer-9 {
+    background-image: url('../../assets/img/icons/designer/9_composition.png');
+}
+.image-lesson-item-designer-10 {
+    background-image: url('../../assets/img/icons/designer/10_project.png');
+}
+
+
+.image-lesson-item-cook-1 {
+    background-image: url('../../assets/img/icons/cook/1_basics.png');
+}
+.image-lesson-item-cook-2 {
+    background-image: url('../../assets/img/icons/cook/2_himia.png');
+}
+.image-lesson-item-cook-3 {
+    background-image: url('../../assets/img/icons/cook/3_phisics.png');
+}
+.image-lesson-item-cook-4 {
+    background-image: url('../../assets/img/icons/cook/4_tehnology.png');
+}
+.image-lesson-item-cook-5 {
+    background-image: url('../../assets/img/icons/cook/5_ingredients.png');
+}
+.image-lesson-item-cook-6 {
+    background-image: url('../../assets/img/icons/cook/6_hranenie.png');
+}
+.image-lesson-item-cook-7 {
+    background-image: url('../../assets/img/icons/cook/7_vkus.png');
+}
+.image-lesson-item-cook-8 {
+    background-image: url('../../assets/img/icons/cook/8_reciept.png');
+}
+.image-lesson-item-cook-9 {
+    background-image: url('../../assets/img/icons/cook/9_cooking.png');
+}
+.image-lesson-item-cook-10 {
+    background-image: url('../../assets/img/icons/cook/10_prizentacia.png');
+}
+
+
+.image-lesson-item-teacher-1 {
+    background-image: url('../../assets/img/icons/teacher/1_basics.png');
+}
+.image-lesson-item-teacher-2 {
+    background-image: url('../../assets/img/icons/teacher/2_psyhycs.png');
+}
+.image-lesson-item-teacher-3 {
+    background-image: url('../../assets/img/icons/teacher/3_information.png');
+}
+.image-lesson-item-teacher-4 {
+    background-image: url('../../assets/img/icons/teacher/4_books.png');
+}
+.image-lesson-item-teacher-5 {
+    background-image: url('../../assets/img/icons/teacher/5_method.png');
+}
+.image-lesson-item-teacher-6 {
+    background-image: url('../../assets/img/icons/teacher/6_matherial.png');
+}
+.image-lesson-item-teacher-7 {
+    background-image: url('../../assets/img/icons/teacher/7_shema.png');
+}
+.image-lesson-item-teacher-8 {
+    background-image: url('../../assets/img/icons/teacher/8_disciplina.png');
+}
+.image-lesson-item-teacher-9 {
+    background-image: url('../../assets/img/icons/teacher/9_tema.png');
+}
+.image-lesson-item-teacher-10 {
+    background-image: url('../../assets/img/icons/teacher/10_lesson.png');
+}
+
+
+
+.image-lesson-item-doctor-1 {
+    background-image: url('../../assets/img/icons/doctor/1_basics.png');
+}
+.image-lesson-item-doctor-2 {
+    background-image: url('../../assets/img/icons/doctor/2_anatomy.png');
+}
+.image-lesson-item-doctor-3 {
+    background-image: url('../../assets/img/icons/doctor/3_himia.png');
+}
+.image-lesson-item-doctor-4 {
+    background-image: url('../../assets/img/icons/doctor/4_farmacology.png');
+}
+.image-lesson-item-doctor-5 {
+    background-image: url('../../assets/img/icons/doctor/5_phisics.png');
+}
+.image-lesson-item-doctor-6 {
+    background-image: url('../../assets/img/icons/doctor/6_birth.png');
+}
+.image-lesson-item-doctor-7 {
+    background-image: url('../../assets/img/icons/doctor/7_obraz.png');
+}
+.image-lesson-item-doctor-8 {
+    background-image: url('../../assets/img/icons/doctor/8_vred.png');
+}
+.image-lesson-item-doctor-9 {
+    background-image: url('../../assets/img/icons/doctor/9_siagnoz.png');
+}
+.image-lesson-item-doctor-10 {
+    background-image: url('../../assets/img/icons/doctor/10_lechenie.png');
+}
+
+.image-lesson-item-builder-1 {
+    background-image: url('../../assets/img/icons/builder/1_basics.png');
+}
+.image-lesson-item-builder-2 {
+    background-image: url('../../assets/img/icons/builder/2_engeneer.png');
+}
+.image-lesson-item-builder-3 {
+    background-image: url('../../assets/img/icons/builder/3_arhitect.png');
+}
+.image-lesson-item-builder-4 {
+    background-image: url('../../assets/img/icons/builder/4_matherial.png');
+}
+.image-lesson-item-builder-5 {
+    background-image: url('../../assets/img/icons/builder/5_instrument.png');
+}
+.image-lesson-item-builder-6 {
+    background-image: url('../../assets/img/icons/builder/6_tehnologies.png');
+}
+.image-lesson-item-builder-7 {
+    background-image: url('../../assets/img/icons/builder/7_phisics.png');
+}
+.image-lesson-item-builder-8 {
+    background-image: url('../../assets/img/icons/builder/8_himia.png');
+}
+.image-lesson-item-builder-9 {
+    background-image: url('../../assets/img/icons/builder/9_plan.png');
+}
+.image-lesson-item-builder-10 {
+    background-image: url('../../assets/img/icons/builder/10_proekt.png');
+}

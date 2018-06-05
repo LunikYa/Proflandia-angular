@@ -5,7 +5,7 @@ module.exports.getLessons = async function (ctx) {
     const db = clientDb.getDB();
 
     const lessons = await db.collection('lessons').find({profession: ctx.params.profession}).toArray();
-    console.log('params', ctx.params.profession, 'result', lessons)
+
     ctx.response.status = 200;
     ctx.response.body   = lessons;
 }
@@ -32,15 +32,6 @@ module.exports.getUser = async function (ctx){
         ctx.response.status = 201;
         ctx.response.body ='User with this email ot found';
     }
-}
-
-module.exports.getChoosedProfessions = async function (ctx) {
-    ctx.response.status   = 200;
-    ctx.response.body = [
-                        {profession: 'designer', currentLevel: 2}, 
-                        {profession: 'cook', currentLevel: 5}, 
-                        {profession: 'teacher', currentLevel: finished}
-                    ];
 }
 
 module.exports.getQuestions = async function (ctx) {
@@ -73,10 +64,17 @@ module.exports.putProfession = async function (ctx) {
         if(matches) {
             const user = await db.collection('users').findOne({ email: request.email });
             if(user) {
-                user.professions.push({profession: request.profession, currentLevel: 1})
+                for(let i = 0; i < user.professions; i++) {
+                    if(user.professions[i] === request.profession) {
+                        ctx.response.status = 201;
+                        ctx.response.body   = {status: 'Profession already added'};
+                        return
+                    }
+                }
+                user.professions.push({profession: matches, currentLevel: 1})
                 await db.collection('users').save(user)
                 ctx.response.status = 200;
-                ctx.response.body   = {status: 'All ok', user: request.email};
+                ctx.response.body   = {status: 'All ok', user: user};
             } else {
                 ctx.response.status = 404;
                 ctx.response.body = {error: 'User is not defined'};
@@ -84,6 +82,27 @@ module.exports.putProfession = async function (ctx) {
         } else {
             ctx.response.status = 404;
             ctx.response.body = {error: 'Profession is not defined'};
+        }
+    } else {
+        ctx.response.status = 404;
+        ctx.response.body = {error: 'Bad request object, please put it in request'};
+    }
+}
+
+module.exports.putRecomendedProfession = async function (ctx) {
+    const db       = clientDb.getDB();
+    const request  = ctx.request.body; 
+
+    if(request) {
+        const user = await db.collection('users').findOne({ email: request.email });
+        if(user) {
+            user.recomendedProfession = request.profession;
+            await db.collection('users').save(user)
+            ctx.response.status = 200;
+            ctx.response.body   = {status: 'All ok', user: user};
+        } else {
+            ctx.response.status = 404;
+            ctx.response.body = {error: 'User is not defined'};
         }
     } else {
         ctx.response.status = 404;

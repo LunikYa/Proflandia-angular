@@ -1,0 +1,39 @@
+.header-top-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-nav-ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    font-size: 15px;
+    li {
+        margin-left: 60px;
+    }
+}
+.header-logo {
+    background: url('../logo.svg') no-repeat 0 0;
+    width: 150px;
+    height: 50px;
+}
+
+@media screen and (max-width: 540px) {
+    .header-nav-ul {
+        font-size: 13px;
+        li {
+            margin-left: 30px;
+        }
+    }
+}
+@media screen and (max-width: 430px) {
+    .header-nav-ul {
+        font-size: 12px;
+        li {
+            margin-left: 10px;
+        }
+    }
+    .header-logo {
+        width: 120px;
+    }
+}

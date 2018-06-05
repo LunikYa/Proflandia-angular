@@ -41,7 +41,7 @@ module.exports = {
                 use: [{loader: 'url-loader'}, {loader: 'image-webpack-loader'}]
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file?name=public/fonts/[name].[ext]'
             },
             {

@@ -1,14 +1,17 @@
 class AccountPageController {
-    constructor(AccountPageService, $rootScope) {
+    constructor(AccountPageService, $rootScope, $state) {
         this.AccountPageService = AccountPageService;
-        this.$rootScope = $rootScope;
-        this.$rootScope.recommendedProfession = this.$rootScope.recommendedProfession || [];
+        this.exitToLocation = ('/');
+        this.modalWindowText = 'Вы уверенны, что хотите выйти?';
+        this.$rootScope=$rootScope;
+        this.$rootScope.recommendedProfession=this.$rootScope.recommendedProfession||[];
+        this.$state = $state
     }
 
     $onInit() {
         this.AccountPageService.getUserFromApi().then(res => this.user = res);
         this.$rootScope.showModalWindow = false;
-        this.$rootScope.modalWindowText = '';
+        this.$rootScope.modalWindowText = '';    
     }
 
     exitAccount() {
@@ -17,12 +20,12 @@ class AccountPageController {
         this.$rootScope.exitToLocation = ('/');
     }
 
-    addNewProfession() {
-        console.log('addNewProfession()');
+    goToAdder() {
+        this.$state.go('adder')
     }
 
     toCurrentProfession(currentProfession) {
-        console.log(currentProfession);
+        this.$state.go('professionPage', {profession: currentProfession.name})
     }
 }
 

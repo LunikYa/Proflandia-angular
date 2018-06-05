@@ -1,0 +1,31 @@
+<div class="header-top-line home-wrapper">
+        <div class="header-logo">
+        </div>
+        <nav>
+            <ul class="header-nav-ul">
+                <a href="/account-page"><li class="image-go-to-account"></li></a>
+            </ul>
+        </nav>
+    </div>
+<div class='conteiner-profession-page home-wrapper'>
+    <h2 class="prof-page-title">
+        {{$ctrl.profession.rus}}
+    </h2>
+    <div class="{{$ctrl.imageClass}}"></div>
+    <div class="prof-page-description">
+        {{$ctrl.profession.description}}
+    </div>
+    <div class="prof-page-lesson-title">
+        Уроки
+    </div>
+    <p class="prof-page-lesson-attempt">
+        Каждый последующий урок будет доступен после прохождения предудущего
+    </p>
+    <div class="prof-page-lesson-conteiner">
+        <div ng-repeat="lesson in $ctrl.lessonsForSlider" class="prof-page-item-conteiner">
+            <div class="image-lesson-item image-lesson-item-{{lesson.profession + '-' + lesson.level}} {{lesson.level > 2 ? 'disable-lessons' : ''}}"></div>
+            <div class="name-lesson-item">{{lesson.name}}</div>
+            <div class="button-lesson-item {{lesson.level > 2 ? 'disable-lessons' : ''}}">К уроку</div>
+        </div>
+    </div>
+</div>

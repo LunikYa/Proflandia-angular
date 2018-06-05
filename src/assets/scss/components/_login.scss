@@ -1,12 +1,15 @@
 .conteiner-form{
     margin: 0 auto;
-    max-width: 400px;
-    height: 100%;
-    // background-color: $primary-color-fiolet;
-    margin-top: 20px;
+    height: 90%;
+    background: url('../../assets/img/login-bg.png') no-repeat 50% 50%;
+    background-size: contain;
     text-align: center;
 }
-
+@media screen and (max-width: 769px) {
+    .conteiner-form{
+        background-size: cover;
+    }
+}
 .conteiner-form form{
     display: flex;
     flex-direction: column;
@@ -14,6 +17,9 @@
 }
 .caption-h2 { 
     color: $primary-color-fiolet;
+    padding-top: 60px;
+    font-family: oks;
+    font-size: 30px;
 }
 .link{
     font-size: 12px;
@@ -29,9 +35,10 @@
     width: 280px;
     height: 40px;
     outline: none;
+    border-radius: 50px;
+    border: none;
     margin-bottom: 25px;
     padding-left: 10px;
-    border: 1px solid black;
     background-size: auto 90%;
   }
   .accept-input{
@@ -70,12 +77,12 @@
 }
 
 .button{
-    width: 150px;
-    height: 40px;
+    width: 200px;
+    height: 50px;
     color: #ffffff;
     background-color: $primary-color-fiolet;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
     opacity: 0.8;
     font-size: 15px;
