@@ -6,6 +6,7 @@
                 <ul class="header-nav-ul">
                     <a href="/account-page"><li class="image-go-to-account"></li></a>
                     <a ng-click="$ctrl.exitAccount()"><li>Выйти</li></a>
+                    <modal-window ng-show="$ctrl.$rootScope.showModalWindow"></modal-window>
                 </ul>
             </nav>
         </div>
@@ -37,8 +38,11 @@
                 <div class={{professions.profession.name}}></div>
                 <br/>
                 <progress max='10' value={{professions.currentLevel}}></progress>
-                <br/>
                 {{professions.currentLevel}} уровень
+                <br/>
+                <progress max='12' value={{professions.profession.numberLessons}}></progress>
+                <br/>
+                {{professions.profession.numberLessons}} уроков
                 <button class="toProfession" ng-click="$ctrl.toCurrentProfession(professions.profession)">К профессии
                 </button>
             </div>
