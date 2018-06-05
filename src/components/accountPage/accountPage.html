@@ -33,13 +33,16 @@
         </div>
         <h2>Изучаю</h2>
         <div class="accountBottom">
-            <div class="progressProfession" ng-repeat="professions in $ctrl.userProfessions">
+            <div class="progressProfession" ng-repeat="professions in $ctrl.user.professions">
                 <span>{{professions.profession.rus}}</span>
                 <div class={{professions.profession.name}}></div>
                 <br/>
                 <progress max='10' value={{professions.currentLevel}}></progress>
-                <br/>
                 {{professions.currentLevel}} уровень
+                <br/>
+                <progress max='12' value={{professions.profession.numberLessons}}></progress>
+                <br/>
+                {{professions.profession.numberLessons}} уроков
                 <button class="toProfession" ng-click="$ctrl.toCurrentProfession(professions.profession)">К профессии
                 </button>
             </div>
