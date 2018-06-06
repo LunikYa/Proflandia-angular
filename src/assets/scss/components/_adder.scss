@@ -80,6 +80,7 @@
     background-color: $primary-color-fiolet;
     color: #ffffff;
     cursor: pointer;
+    border: none;
 }
 .adder-item-button:hover {
     transition: all 1s;
@@ -100,4 +101,62 @@
     left: -40px;
     background: url('../../assets/img/icon-ok.png') no-repeat 50% 50%;
     background-size: cover;
+}
+.wrapper-background::before{
+    content: '';
+    display: block;
+    background-color: rgba(185, 185, 185, 0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.adder-popup-wrapper {
+    width: 500px;
+    height: 600px;
+    overflow: hidden;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #ffffff;
+    text-align: center;
+    background: url('../../assets/img/background-test.png') no-repeat 0 0;
+    background-size: contain;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+}
+.adder-popup-title {
+    color: #ffffff;
+    margin-top: 110px;
+    font-weight: 600;
+    font-size: 20px;
+}
+.adder-popup-title.adder-popup-question {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.adder-popup-button-conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.adder-popup-button-conteiner {
+    .adder-item-button {
+        margin-top: 20px;
+    }
+}
+.adder-popup.ng-enter {
+    transition: all 10s;
+    height: 0px;
+}
+
+.adder-popup.ng-enter.ng-enter-active {
+    height: 30px;
 }

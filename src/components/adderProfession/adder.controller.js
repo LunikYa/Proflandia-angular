@@ -1,11 +1,15 @@
 class LoginController {
-    constructor($scope, $state, AdderService) {
+    constructor($scope, $state, $rootScope, AdderService) {
         this.AdderService = AdderService
+        this.$rootScope = $rootScope;
         this.$state       = $state
         this.useremail    = localStorage.getItem('useremail')
+        this.showPopup = false
     }
     $onInit(){
+        this.showPopup = false
         this.AdderService.getUser(this.useremail).then(res => {
+            this.$rootScope.tessssst = 'asdasdasd'
             this.user = res
             this.user.professions.forEach(el => {
                 this[el.profession.name] = true
@@ -15,14 +19,14 @@ class LoginController {
     addNewProf(prof){
         this.AdderService.addProf(this.useremail, prof).then(
             res => {
-                console.log(res)
                 this[prof] = true;
-                this.$state.go('professionPage', {profession: prof});
+                this.showPopup = true
+                this.$rootScope.addedProfession = prof;
             }
         )
     }
 };
 
-LoginController.$inject = ['$scope', '$state', 'AdderService'];
+LoginController.$inject = ['$scope', '$state', '$rootScope', 'AdderService'];
 
 export default LoginController
