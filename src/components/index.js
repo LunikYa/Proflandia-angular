@@ -9,7 +9,7 @@ import HeaderComponent from './header/header.module';
 import ProfessionPage from './professionPage/profession.module';
 import Adder from './adderProfession/adder.module';
 import AdderPopup from './adder-popup/adderPopup.module'
-
+import DesignerLesson from './designer-lesson/designerLesson.module'
 const rootModule = angular
     .module('app.components', [
         Login,
@@ -21,7 +21,8 @@ const rootModule = angular
         HeaderComponent,
         ProfessionPage,
         Adder,
-        AdderPopup
+        AdderPopup,
+        DesignerLesson
     ])
     .name;
 

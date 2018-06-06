@@ -25,7 +25,9 @@
         <div ng-repeat="lesson in $ctrl.lessonsForSlider" class="prof-page-item-conteiner">
             <div class="image-lesson-item image-lesson-item-{{lesson.profession + '-' + lesson.level}} {{lesson.level > 2 ? 'disable-lessons' : ''}}"></div>
             <div class="name-lesson-item">{{lesson.name}}</div>
-            <div class="button-lesson-item {{lesson.level > 2 ? 'disable-lessons' : ''}}">К уроку</div>
+            <div class="button-lesson-item {{lesson.level > 2 ? 'disable-lessons' : ''}}" ng-click="$ctrl.goToLesson(lesson)">К уроку</div>
+            <div class="adder-item-success-disable adder-item-success-disable-prof-page" ng-show="$ctrl.currentLevel > lesson.level">Изучен</div>
         </div>
     </div>
 </div>
+<!-- ng-show="lesson.level >= $ctrl.currentLevel" -->

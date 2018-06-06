@@ -33,7 +33,7 @@
         <h2>Изучаю</h2>
         <div class="accountBottom">
             <div class="progressProfession" ng-repeat="professions in $ctrl.user.professions">
-                <span>{{professions.profession.rus}}</span>
+                <span class="profession-name">{{professions.profession.rus}}</span>
                 <div class={{professions.profession.name}}></div>
                 <br/>
                <progress max='10' value={{professions.currentLevel}}></progress>

@@ -109,3 +109,28 @@ module.exports.putRecomendedProfession = async function (ctx) {
         ctx.response.body = {error: 'Bad request object, please put it in request'};
     }
 }
+
+module.exports.putLevelUp = async function (ctx) {
+    const db       = clientDb.getDB();
+    const request  = ctx.request.body; 
+    // {email: email, profession: 'designer'
+    if(request) {
+        const user = await db.collection('users').findOne({ email: request.email });
+        if(user) {
+            for(let i = 0; i < user.professions.length; i++) {
+                if(user.professions[i].profession.name === request.profession) {
+                    user.professions[i].currentLevel= user.professions[i].currentLevel + 1;
+                }   
+            }            
+            await db.collection('users').save(user)
+            ctx.response.status = 200;
+            ctx.response.body   = {status: 'All ok', user: user};
+        } else {
+            ctx.response.status = 404;
+            ctx.response.body = {error: 'User is not defined'};
+        }
+    } else {
+        ctx.response.status = 404;
+        ctx.response.body = {error: 'Bad request object, please put it in request'};
+    }
+}

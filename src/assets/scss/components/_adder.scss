@@ -160,3 +160,13 @@
 .adder-popup.ng-enter.ng-enter-active {
     height: 30px;
 }
+.adder-item-success-disable-prof-page {
+    font-size: 11px;
+    margin-top: 10px;
+}
+.adder-item-success-disable-prof-page.adder-item-success-disable:before {
+    width: 20px;
+    height: 20px;
+    top: -7px;
+    left: -20px;
+}

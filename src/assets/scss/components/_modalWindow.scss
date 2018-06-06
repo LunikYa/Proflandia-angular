@@ -22,10 +22,11 @@
     margin: 10% auto;
     padding: 5px 20px 13px 20px;
     border-radius: 10px;
+    color: #ffffff;
     background: $primary-color-white;
-    background: -moz-linear-gradient($primary-color-white, $primary-color-grey);
-    background: -webkit-linear-gradient($primary-color-white, $primary-color-grey);
-    background: -o-linear-gradient($primary-color-white, $primary-color-grey);
+    background: -moz-linear-gradient($primary-color-fiolet, $primary-color-grey);
+    background: -webkit-linear-gradient($primary-color-fiolet, $primary-color-grey);
+    background: -o-linear-gradient($primary-color-fiolet, $primary-color-grey);
     .close {
       background: $primary-color-white;
       color: $primary-color-black;
@@ -49,11 +50,12 @@
       width: 5em;
       height: 2em;
       border-radius: 3em;
-      border-width: 0.2em;
+      border: none;
+      // border-width: 0.2em;
       border-color: $primary-color-black;
     }
     button:hover {
-      background: $primary-color-black;
+      background: $primary-color-blue;
       color: $primary-color-white;
     }
   }

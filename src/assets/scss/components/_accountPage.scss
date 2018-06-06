@@ -133,11 +133,12 @@
           background-color: $primary-color-lime;
         }
         .toProfession {
-          height: 1.5em;
+          // height: 1.5em;
           color: $primary-color-white;
           border-radius: 2em;
           background-color: $primary-color-fiolet;
-          padding: 0 0.5em;
+          padding: 12px 15px;
+          margin-top: 10px;
           border: none;
         }
         .toProfession:hover {
@@ -147,4 +148,8 @@
       }
     }
   }
+}
+.profession-name {
+  text-transform: capitalize;
+  font-weight: 700;
 }

@@ -79,6 +79,10 @@ const App = angular
                 url: '/profession/{profession}',
                 component: 'professionPage'
             })
+            .state('lessonPage', {
+                url: '/lessons/designer',
+                component: 'designerLesson'
+            })
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('');

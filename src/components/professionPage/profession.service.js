@@ -8,4 +8,7 @@ export default class ProfessionService {
     getProfessions() {
       return this.$http.get(`http://proflandia.herokuapp.com/professions`).then(response => response.data);
     }
+    getUser(email) {
+      return this.$http.get(`http://proflandia.herokuapp.com/user/${email}`).then(response => response.data);
+    }
   }
