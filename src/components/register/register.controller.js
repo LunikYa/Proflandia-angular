@@ -25,7 +25,11 @@ class RegisterController {
                     localStorage.setItem('user', JSON.stringify(res))
                     this.$state.go('accountPage')
                 },
-                rej => console.log('reject', rej)
+                rej => {
+                    console.log('reject', rej)
+                    this.emailError = rej.data || ''
+                    this.emailClass = 'error-input'
+                } 
             )
         }
     }
