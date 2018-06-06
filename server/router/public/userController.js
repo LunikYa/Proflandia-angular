@@ -19,7 +19,7 @@ module.exports.regUser = async function (ctx){
             email: tempUser.email
         }
         const token       = jwt.sign(payload, jwtsecret);
-        ctx.response.body = { message: 'user created', token: token, user: doc.ops[0].email };
+        ctx.response.body = { message: 'user created', token: token, user: tempUser.email };
     }
 }    
 

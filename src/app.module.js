@@ -49,7 +49,7 @@ const App = angular
       }])
     .component('app', AppComponent)
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) => {
-        $httpProvider.interceptors.push('httpLoaderInterceptor');
+        // $httpProvider.interceptors.push('httpLoaderInterceptor');
         $stateProvider
             .state('home', {
                 url: '/',
