@@ -1,6 +1,7 @@
 class AppController {
-    constructor($transitions, CheckAccessService){
+    constructor($scope, $transitions, CheckAccessService){
         this.$transitions = $transitions
+        this.$scope = $scope
         this.isShownLoader = true
         this.init()
     }
@@ -23,9 +24,15 @@ class AppController {
         this.$transitions.onFinish({}, transition=>{
             loader.style.display = 'none'
         })
+        this.$scope.$on('httpLoaderStart', function(event, toState, toParams, fromState, fromParams) {
+            document.getElementById('http-loader').style.display = 'block'
+        });
+        this.$scope.$on('httpLoaderEnd', function(event, toState, toParams, fromState, fromParams) {
+            setTimeout(()=>{document.getElementById('http-loader').style.display = 'none'}, 1500)
+        });
     }
 }
 
-AppController.$inject = ['$transitions'];
+AppController.$inject = ['$scope', '$transitions'];
 
 export default AppController

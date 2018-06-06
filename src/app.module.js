@@ -2,6 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import AppComponent from './app.component';
 import Components from './components/index.js';
+import TestComponent from './components/test.component'
 import './assets/scss/main.scss';
 // import httpLoaderFactory from './heplers/httpLoader.factory'
 
@@ -10,9 +11,37 @@ const App = angular
         Components,
         uiRouter
     ])
+    .factory('httpLoaderInterceptor', ['$rootScope', function($rootScope) {
+        let requestCount = 0;
+      
+        function startRequest(config) {
+          if( !requestCount ) {
+            $rootScope.$broadcast('httpLoaderStart');
+          }
+          requestCount++;
+          return config;
+        }
+      
+        function endRequest(arg) {
+          if( !requestCount )
+            return;
+          
+          requestCount--;
+          if( !requestCount ) {
+            $rootScope.$broadcast('httpLoaderEnd');
+          }
+          return arg;
+        }
+        return {
+          'request': startRequest,
+          'requestError': endRequest,
+          'response': endRequest,
+          'responseError': endRequest
+        };
+      }])
     .component('app', AppComponent)
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) => {
-        // $httpProvider.interceptors.push('httpLoaderInterceptor');
+        $httpProvider.interceptors.push('httpLoaderInterceptor');
         $stateProvider
             .state('home', {
                 url: '/',
