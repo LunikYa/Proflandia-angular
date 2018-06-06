@@ -2,9 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import AppComponent from './app.component';
 import Components from './components/index.js';
-import TestComponent from './components/test.component'
 import './assets/scss/main.scss';
-// import httpLoaderFactory from './heplers/httpLoader.factory'
 
 const App = angular
     .module('app', [
