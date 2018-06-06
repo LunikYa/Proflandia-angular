@@ -2,7 +2,6 @@ class AccountPageController {
     constructor(AccountPageService, $rootScope, $state) {
         this.AccountPageService = AccountPageService;
         this.$rootScope=$rootScope;
-        this.$rootScope.recommendedProfession=this.$rootScope.recommendedProfession||[];
         this.$state = $state;
     }
 
