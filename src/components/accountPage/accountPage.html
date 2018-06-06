@@ -38,9 +38,9 @@
                 <progress max='10' value={{professions.currentLevel}}></progress>
                 {{professions.currentLevel}} уровень
                 <br/>
-                <progress max='12' value={{professions.profession.numberLessons}}></progress>
+                <progress max='50' value={{professions.profession.numberLessons}}></progress>
                 <br/>
-                {{professions.profession.numberLessons}} уроков
+                {{professions.profession.numberLessons*5}} уроков
                 <button class="toProfession" ng-click="$ctrl.toCurrentProfession(professions.profession)">К профессии
                 </button>
             </div>
