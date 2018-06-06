@@ -1,13 +1,17 @@
+import RecommendedProfessionService from "./recommendedProfession.service";
+
 class RecommendedProfessionController {
-    constructor($location, $rootScope) {
+    constructor($location, $rootScope, RecommendedProfessionService) {
         this.location = $location;
         this.$rootScope = $rootScope;
-        this.recommendedProfessionArray = this.$rootScope.recommendedProfession;
+        this.RecommendedProfessionService=RecommendedProfessionService;
+        this.recommendedProfessionArray=[];
     }
 
     $onInit() {
         this.$rootScope.showModalWindow = false;
         this.$rootScope.modalWindowText = '';
+
     }
 
     exit() {
@@ -30,25 +34,28 @@ class RecommendedProfessionController {
                 resultsOfTestArray.push(this[i]);
             }
         }
-        if (resultsOfTestArray.length < 30) {
+        if (resultsOfTestArray.length < 10) {
             this.$rootScope.showModalWindow = true;
             this.$rootScope.modalWindowText = 'Вы ответили не на все вопросы! Желаете закончить прохождение теста без получения результатa?';
             this.$rootScope.exitToLocation = ('/account-page');
         }
         else {
+            debugger
             resultOfRecommendedTest = resultsOfTestArray.reduce((x, y) => x + y);
-            if (resultOfRecommendedTest >= 37) {
-                this.recommendedProfessionArray.push('строитель', 'врач');
+            if (resultOfRecommendedTest >= 8) {
+                this.recommendedProfessionArray=['строитель', 'врач'];
             }
-            else if (resultOfRecommendedTest >= 25 && resultOfRecommendedTest <= 36) {
-                this.recommendedProfessionArray.push('врач', 'учитель');
+            else if (resultOfRecommendedTest >= 5 && resultOfRecommendedTest <= 7) {
+                this.recommendedProfessionArray=['врач', 'учитель'];
             }
-            else if (resultOfRecommendedTest >= 13 && resultOfRecommendedTest <= 24) {
-                this.recommendedProfessionArray.push('учитель', 'повар');
+            else if (resultOfRecommendedTest >= 3 && resultOfRecommendedTest <= 5) {
+                this.recommendedProfessionArray=['учитель', 'повар'];
             }
             else {
-                this.recommendedProfessionArray.push('повар', 'дизайнер');
+                this.recommendedProfessionArray=['повар', 'дизайнер'];
             }
+            debugger
+            this.RecommendedProfessionService.putUserRecommendedProfessionToApi(this.recommendedProfessionArray)
             this.location.path('/account-page');
         }
     }
