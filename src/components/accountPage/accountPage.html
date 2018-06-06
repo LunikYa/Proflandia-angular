@@ -20,7 +20,7 @@
                 <span class="userData">{{$ctrl.user.name+" "+$ctrl.user.surname}}</span><br/>
                 <span class="userStatus">Статус: <span>{{'нови'+'чок'}}</span></span>
                 <p>E-mail: <span>{{$ctrl.user.email}}</span></p>
-                <p>Изучено уроков: <span>{{22+5}}/50</span></p>
+                <p>Изучено уроков: <span>{{2+1}}/50</span></p>
                 <p>Рекомендованные профессии:
                     <span><a ng-href="/recommended-profession"
                              ng-show="!$ctrl.$rootScope.RecommendedProfession&&!$ctrl.user.recomendedProfession">Пройти тест</a></span>
@@ -36,14 +36,11 @@
                 <span>{{professions.profession.rus}}</span>
                 <div class={{professions.profession.name}}></div>
                 <br/>
-                <progress max='10' value={{professions.currentLevel}}></progress>
-                {{professions.currentLevel}} уровень
-                <br/>
-                <progress max='50' value={{professions.profession.numberLessons}}></progress>
-                <br/>
-                {{professions.profession.numberLessons}} уроков
-                <button class="toProfession" ng-click="$ctrl.toCurrentProfession(professions.profession)">К профессии
-                </button>
+               <progress max='10' value={{professions.currentLevel}}></progress>
+                    {{professions.currentLevel}} уровень<br/>
+                <span>{{professions.currentLevel}}/{{professions.profession.numberLessons}} уроков</span>
+                <span><button class="toProfession" ng-click="$ctrl.toCurrentProfession(professions.profession)">К профессии
+                </button></span>
             </div>
             <div class="addNewProfession">
                 <br/>
