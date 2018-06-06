@@ -8,6 +8,7 @@ import RecommendedProfession from './recommendedProfessionTest/recommendedProfes
 import HeaderComponent from './header/header.module';
 import ProfessionPage from './professionPage/profession.module';
 import Adder from './adderProfession/adder.module';
+import AdderPopup from './adder-popup/adderPopup.module'
 
 const rootModule = angular
     .module('app.components', [
@@ -19,7 +20,8 @@ const rootModule = angular
         RecommendedProfession,
         HeaderComponent,
         ProfessionPage,
-        Adder
+        Adder,
+        AdderPopup
     ])
     .name;
 
