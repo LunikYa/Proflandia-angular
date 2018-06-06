@@ -9,9 +9,9 @@ const App = angular
         Components,
         uiRouter
     ])
-    .factory('httpLoaderInterceptor', ['$rootScope', function($rootScope) {
+    .factory('httpLoaderInterceptor', ['$rootScope', '$q', function($rootScope, $q) {
         let requestCount = 0;
-      
+
         function startRequest(config) {
           if( !requestCount ) {
             $rootScope.$broadcast('httpLoaderStart');
@@ -30,11 +30,21 @@ const App = angular
           }
           return arg;
         }
+        function endRequestError(arg) {
+            if( !requestCount )
+            return;
+          
+          requestCount--;
+          if( !requestCount ) {
+            $rootScope.$broadcast('httpLoaderEnd');
+          }
+          return $q.reject(arg)
+        }
         return {
           'request': startRequest,
-          'requestError': endRequest,
+          'requestError': endRequestError,
           'response': endRequest,
-          'responseError': endRequest
+          'responseError': endRequestError
         };
       }])
     .component('app', AppComponent)

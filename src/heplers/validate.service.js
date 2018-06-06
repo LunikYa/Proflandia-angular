@@ -14,7 +14,7 @@ export default class ValidateService {
         return {error: false, message: '', elem: input}
     }
     isValidtext(input) {
-        if (/[^\wа-я]|\d/g.test(input.value)) {
+        if (/[^\wа-яА-Я]|\d/g.test(input.value)) {
             return {error: true, message: 'Это поле не должно содержать специальных символов', elem: input}
         }
         else if (input.value.length < 3) {

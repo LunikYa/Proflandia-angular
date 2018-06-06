@@ -9,11 +9,11 @@ module.exports = async () => {
     const users       = db.collection('users');
 
     const professionsArr = [
-        {name: 'designer', rus: 'дизайнер', numberLessons: 12},
-        {name: 'teacher', rus: 'учитель', numberLessons: 12},
-        {name: 'builder', rus: 'строитель', numberLessons: 12},
-        {name: 'doctor', rus: 'доктор', numberLessons: 12},
-        {name: 'cook', rus: 'повар', numberLessons: 12}
+        {name: 'designer', rus: 'дизайнер', numberLessons: 10},
+        {name: 'teacher', rus: 'учитель', numberLessons: 10},
+        {name: 'builder', rus: 'строитель', numberLessons: 10},
+        {name: 'doctor', rus: 'доктор', numberLessons: 10},
+        {name: 'cook', rus: 'повар', numberLessons: 10}
     ]
     const lessonsArr = [{name: 'name', professionId: '', content: '', }]
     // const questionsArr = [{question: 'How are u ?', correctAnswer: 'human', variants: ['dog', 'phone', 'telepuzik'], lessonId: ''}]
