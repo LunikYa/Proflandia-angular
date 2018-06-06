@@ -1,5 +1,3 @@
-import RecommendedProfessionService from "./recommendedProfession.service";
-
 class RecommendedProfessionController {
     constructor($location, $rootScope, RecommendedProfessionService) {
         this.location = $location;
@@ -11,7 +9,6 @@ class RecommendedProfessionController {
     $onInit() {
         this.$rootScope.showModalWindow = false;
         this.$rootScope.modalWindowText = '';
-
     }
 
     exit() {
@@ -40,7 +37,6 @@ class RecommendedProfessionController {
             this.$rootScope.exitToLocation = ('/account-page');
         }
         else {
-            debugger
             resultOfRecommendedTest = resultsOfTestArray.reduce((x, y) => x + y);
             if (resultOfRecommendedTest >= 8) {
                 this.recommendedProfessionArray=['строитель', 'врач'];
@@ -54,8 +50,8 @@ class RecommendedProfessionController {
             else {
                 this.recommendedProfessionArray=['повар', 'дизайнер'];
             }
-            debugger
-            this.RecommendedProfessionService.putUserRecommendedProfessionToApi(this.recommendedProfessionArray)
+            this.$rootScope.RecommendedProfession=this.recommendedProfessionArray;
+            this.RecommendedProfessionService.putUserRecommendedProfessionToApi(this.recommendedProfessionArray);
             this.location.path('/account-page');
         }
     }

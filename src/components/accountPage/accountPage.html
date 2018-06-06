@@ -1,14 +1,16 @@
 <div class="accountPage">
     <div class="header-top-line home-wrapper">
-            <div class="header-logo">
-            </div>
-            <nav>
-                <ul class="header-nav-ul">
-                    <a ng-click="$ctrl.exitAccount()"><li>Выйти</li></a>
-                    <modal-window ng-show="$ctrl.$rootScope.showModalWindow"></modal-window>
-                </ul>
-            </nav>
+        <div class="header-logo">
         </div>
+        <nav>
+            <ul class="header-nav-ul">
+                <a ng-click="$ctrl.exitAccount()">
+                    <li>Выйти</li>
+                </a>
+                <modal-window ng-show="$ctrl.$rootScope.showModalWindow"></modal-window>
+            </ul>
+        </nav>
+    </div>
     <div class="account">
         <div class="accountTop">
             <div class="accountTopLeft">
@@ -20,10 +22,9 @@
                 <p>E-mail: <span>{{$ctrl.user.email}}</span></p>
                 <p>Изучено уроков: <span>{{22+5}}/50</span></p>
                 <p>Рекомендованные профессии:
-                    <span><a ng-href="/recommended-profession">
-                             <!--ng-show="$ctrl.$rootScope.recommendedProfession.length===0">-->Пройти тест</a></span>
-                    <span ng-repeat="recommendedProfession in $ctrl.$rootScope.recommendedProfession">
-                          <!--ng-show="$ctrl.$rootScope.recommendedProfession.length>0">-->
+                    <span><a ng-href="/recommended-profession"
+                             ng-show="!$ctrl.$rootScope.RecommendedProfession&&!$ctrl.user.recomendedProfession">Пройти тест</a></span>
+                    <span ng-repeat="recommendedProfession in $ctrl.$rootScope.RecommendedProfession||$ctrl.user.recomendedProfession">
                     {{recommendedProfession}}
                 </span>
                 </p>
