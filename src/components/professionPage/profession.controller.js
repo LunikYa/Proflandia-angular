@@ -5,6 +5,12 @@ class ProfessionController {
         this.lessonsForSlider = []
     }
     $onInit(){
+        setTimeout(()=>$('#gallery').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3}), 2000)
+        
         this.ProfessionService.getProfessions()
             .then(res => {
                 for(let i = 0; i < res.length; i++){
@@ -18,8 +24,9 @@ class ProfessionController {
         this.ProfessionService.getProfession(this.$state.params.profession)
             .then(
                 res => {
+                    console.log(res)
                     this.lessons = res
-                    this.lessonsForSlider = this.lessons.slice(0, 4)
+                    this.lessonsForSlider = this.lessons 
                 }                
             )
     }

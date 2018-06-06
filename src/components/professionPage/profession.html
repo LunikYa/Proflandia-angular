@@ -21,7 +21,7 @@
     <p class="prof-page-lesson-attempt">
         Каждый последующий урок будет доступен после прохождения предудущего
     </p>
-    <div class="prof-page-lesson-conteiner">
+    <div class="prof-page-lesson-conteiner" id='gallery'>
         <div ng-repeat="lesson in $ctrl.lessonsForSlider" class="prof-page-item-conteiner">
             <div class="image-lesson-item image-lesson-item-{{lesson.profession + '-' + lesson.level}} {{lesson.level > 2 ? 'disable-lessons' : ''}}"></div>
             <div class="name-lesson-item">{{lesson.name}}</div>

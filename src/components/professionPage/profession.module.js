@@ -3,7 +3,6 @@ import uiRouter        from 'angular-ui-router';
 import ProfessionComponent  from './profession.component';
 import ProfessionService    from './profession.service';
 
-
 const ProfessionModule = angular
     .module('professionPage', [uiRouter])
     .service('professionService', ProfessionService)
