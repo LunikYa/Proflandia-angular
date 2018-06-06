@@ -13,7 +13,7 @@ class AppController {
         this.$transitions.onStart({}, (transition) => {
             const pathTo = transition.to().name;
             const token = localStorage.getItem('token')
-            console.log(`token: ${!!token}, path: ${pathTo}`)
+
             if (pathTo !== 'register' &&
                 pathTo !== 'login' &&
                 pathTo !== 'home' && !token) {
