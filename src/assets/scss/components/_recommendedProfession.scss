@@ -43,15 +43,19 @@
       }
     }
   }
-  .recommendedTestButton {
-    height: 2em;
-    color: $primary-color-white;
-    border-radius: 2em;
-    background-color: $primary-color-fiolet;
-    padding: 0 0.5em;
-  }
-  .recommendedTestButton:hover {
-    transform: scale(1.1);
-    transition: all 1s;
+  .recProfButton {
+    padding: 1em;
+    background-color: $primary-color-yellow;
+    .recommendedTestButton {
+      height: 2em;
+      color: $primary-color-white;
+      border-radius: 2em;
+      background-color: $primary-color-fiolet;
+      padding: 0 0.5em;
+    }
+    .recommendedTestButton:hover {
+      transform: scale(1.1);
+      transition: all 1s;
+    }
   }
 }

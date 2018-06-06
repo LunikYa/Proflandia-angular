@@ -3,7 +3,7 @@
         <ul>
             <li class="accountLogo">LOGO</li>
             <li>
-                <a ng-click="$ctrl.exit()">выйти из аккаунта</a>
+                <a ng-click="$ctrl.exit()">выйти</a>
                 <modal-window ng-show="$ctrl.showModalWindow"></modal-window>
             </li>
             <li><a ng-click="$ctrl.returnToAccount()" title="вернутся в аккаунт"><img
@@ -82,6 +82,6 @@
             <li><input type="radio" ng-value="0" name="question10" ng-model="$ctrl.question10">Раздражаюсь и злюсь.</li>
         </ul>
     </form>
-    <button ng-click="$ctrl.getResult($ctrl.form)" class="recommendedTestButton">Узнать результат</button>
+    <div class="recProfButton"><button ng-click="$ctrl.getResult($ctrl.form)" class="recommendedTestButton">Узнать результат</button></div>
     <modal-window ng-show="$ctrl.$rootScope.showModalWindow"></modal-window>
 </div>

@@ -88,6 +88,7 @@
         width: min-content;
         height: min-content;
         margin-right: 2em;
+        margin-bottom: 2em;
         .cook {
           width: 8em;
           height: 8em;
@@ -132,11 +133,12 @@
           background-color: $primary-color-lime;
         }
         .toProfession {
-          height: 2em;
+          height: 1.5em;
           color: $primary-color-white;
           border-radius: 2em;
           background-color: $primary-color-fiolet;
           padding: 0 0.5em;
+          border: none;
         }
         .toProfession:hover {
           transform: scale(1.1);
